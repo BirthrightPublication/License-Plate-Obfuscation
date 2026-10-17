@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "applicationVersion": "0.1.0",
+  "integrationStatus": "blocked-sdk-not-supplied",
+  "sdkPackage": null,
+  "sdkVersion": null,
+  "testedVersions": [],
+  "policy": "Only documented versioned SDK interfaces; no private APIs or engine repository modifications.",
+  "vehicleModelSupport": "reserved; unavailable in 0.1.0"
+}
