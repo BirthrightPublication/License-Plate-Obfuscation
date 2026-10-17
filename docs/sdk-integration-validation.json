@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "scope": "SDK consumer compatibility and prototype launcher repair; NOT production renderer integration",
+  "applicationVersion": "0.1.2",
+  "testedImplementationCommit": "9d278f846a2def5eb7751a72918b31b62042a559",
+  "ciRun": "https://github.com/BirthrightPublication/License-Plate-Obfuscation/actions/runs/38996217608",
+  "observedConclusion": "success",
+  "trueEngine": {
+    "crateVersion": "0.1.2",
+    "sdkContract": "0.1",
+    "sourceCommit": "8d751dbe76ca1dfd02c826e60ec68dda7e7d51b0"
+  },
+  "ciTests": {
+    "windows": {
+      "nodePassed": 5,
+      "pythonPassed": 38,
+      "pythonSkipped": 0,
+      "sdkCpuPassed": 4,
+      "sdkGpuPassed": 1,
+      "adapter": "Microsoft Basic Render Driver",
+      "backend": "DX12",
+      "adapterType": "software"
+    },
+    "ubuntu": {
+      "nodePassed": 5,
+      "pythonPassed": 37,
+      "pythonSkipped": 1,
+      "sdkCpuPassed": 4,
+      "sdkGpuPassed": 1,
+      "adapter": "llvmpipe LLVM20.1.2 / Mesa25.2.8",
+      "backend": "Vulkan",
+      "adapterType": "software"
+    }
+  },
+  "windowsPrototypePackageChecks": [
+    "native EXE self-checks",
+    "packaged Start Plate.bat",
+    "archive checksum and app manifest",
+    "native install",
+    "interrupted-rename recovery",
+    "persistent-file markers preserved",
+    "loopback HTTP and ES modules",
+    "Chromium editing/save/reopen/export/import",
+    "candidate artifact uploaded"
+  ],
+  "notVerified": [
+    "production application renders through engine",
+    "interactive mouse/window/hardware qualification",
+    "user B drive installation or repair",
+    "native Update BAT detached public-download path in this branch"
+  ],
+  "blockedCapabilities": [
+    "supported orthographic projection",
+    "suitable text/custom-mesh submission"
+  ],
+  "newVersion": false,
+  "newTag": false,
+  "stableReleasePublished": false,
+  "userDataModified": false,
+  "engineRepositoryModified": false,
+  "previousFailures": [
+    {
+      "run": "38995978921",
+      "reason": "Windows test fixture compared short/long TEMP path spelling; Linux runner had no graphics adapter"
+    },
+    {
+      "run": "38996083915",
+      "reason": "Linux no-adapter failure confirmed; CPU tests passed"
+    }
+  ]
+}

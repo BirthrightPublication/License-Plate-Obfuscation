@@ -22,6 +22,28 @@
   ],
   "assessment": "docs/TRUE-ENGINE-SDK-ASSESSMENT.md",
   "featureRequest": "docs/TRUE-ENGINE-FEATURE-REQUEST.md",
-  "testScope": "Standalone external SDK consumer only; 4 CPU and 1 offscreen rendered-pixel test on Linux Mesa llvmpipe/GL. Production application and Windows integration untested.",
-  "testReport": "docs/true-engine-sdk-test-results.txt"
+  "testScope": "Separate external SDK consumer only: 4 CPU + 1 actual engine pixel test passed locally and in Ubuntu/Windows CI with software adapters. Production application integration and interactive hardware qualification remain untested.",
+  "testReport": "docs/true-engine-sdk-test-results.txt",
+  "ciRun": "https://github.com/BirthrightPublication/License-Plate-Obfuscation/actions/runs/38996217608",
+  "testedConsumerSourceCommit": "9d278f846a2def5eb7751a72918b31b62042a559",
+  "testedPlatforms": [
+    {
+      "platform": "Linux cloud",
+      "adapter": "Mesa llvmpipe LLVM19.1.7",
+      "backend": "GL",
+      "adapterType": "software"
+    },
+    {
+      "platform": "Ubuntu GitHub runner",
+      "adapter": "Mesa llvmpipe LLVM20.1.2",
+      "backend": "Vulkan",
+      "adapterType": "software"
+    },
+    {
+      "platform": "Windows GitHub runner",
+      "adapter": "Microsoft Basic Render Driver",
+      "backend": "DX12",
+      "adapterType": "software"
+    }
+  ]
 }

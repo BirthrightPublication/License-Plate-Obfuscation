@@ -28,7 +28,7 @@ EGL_PLATFORM=surfaceless cargo +1.85.1 test --locked --test sdk_gpu -- --nocaptu
 The default test command includes the GPU check. Missing adapters/devices are
 failures, never automatic skips. `--test sdk_cpu` is an explicitly limited CPU
 check and must not be reported as GPU/rendering acceptance. Adapter information
-is printed by the GPU test; software rendering does not qualify hardware or
+is printed by the GPU test. The host tries a default adapter and then the wgpu software-adapter request; both execute the same True Engine renderer and all pixel assertions. Software rendering does not qualify hardware or
 Windows driver behavior. This test creates an offscreen target, not a real window
 or native mouse events. Its camera calls and resize are programmatic.
 

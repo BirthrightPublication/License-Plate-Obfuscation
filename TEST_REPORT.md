@@ -43,19 +43,41 @@ remain associated with their original tagged source and binaries.
 
 ## Unrun and blocked checks
 
-No native Windows execution, real mouse/window events, Windows GPU/driver test,
-new Windows build, updater download on the user's PC, existing-installation
-repair, data migration, or application/engine integration test ran here.
+No Windows execution occurred in this Linux cloud. The remote consumer and cmd.exe tests below ran on Windows. No real mouse/window events, user hardware qualification, updater download on the user's PC, existing-installation repair, data migration, or production application/engine integration test is claimed.
 No app UI asset changed; no new browser visual test is claimed.
 
 The reusable SDK workflow now runs CPU/GPU checks on both Ubuntu and Windows and
 is a dependency of Windows packaging/publication. A missing adapter fails, never
-silently skips. These new remote jobs have not been observed from this cloud.
+silently skips. The remote jobs were observed through public GitHub HTML/annotations, independently of API access.
 The cloud's api.github.com tunnel returned403; successful Git access is separate.
 A stable-tag guard additionally refuses publication while the compatibility
 manifest says the app does not render through True Engine or SDK capabilities
 remain blocked. Future actual editor acceptance must supplement the probe; a
 standalone rendering test is not production integration.
+
+## Actual remote CPU/GPU and Windows launcher verification
+
+[GitHub run38996217608](https://github.com/BirthrightPublication/License-Plate-Obfuscation/actions/runs/38996217608) tested
+implementation commit `9d278f846a2def5eb7751a72918b31b62042a559`.
+Public annotations confirm Windows38Python tests passed with0skips, including
+actual cmd.exe primary/alias execution; Ubuntu37passed/1Windows-onlyskip.
+SDK consumer tests passed4CPU+1rendered-pixel test on each platform. Ubuntu used
+Mesa llvmpipe LLVM20.1.2/Vulkan; Windows used Microsoft Basic Render Driver/DX12.
+These are software adapters, not consumer hardware or interactive-window tests.
+Full exact scope and initial failure history: docs/true-engine-sdk-test-results.txt.
+
+Initial run38995978921 failed six Windows fixture comparisons because TEMP used
+an8.3path alias while dispatch canonicalized to the long name; the fixture now
+uses the same actual directory, keeping assertions intact. Initial Linux GPU
+runs failed with no adapter, never skipped. Explicit Mesa driver setup fixed that
+runner prerequisite. No render assertion or SDK requirement was relaxed. The complete run then finished **Success**. Its windows-package job built the
+existing prototype into native EXEs and passed the actual packaged Start batch,
+checksum/manifest verification, native installation, interrupted-rename recovery,
+personal-marker preservation, HTTP/ES-module startup and Chromium
+editing/save/reopen/export/import checks. It uploaded a development candidate
+artifact. Tag-only publish/live-update jobs were skipped; no stable release or
+live public update is claimed for this branch. This package still contains the
+unintegrated CSS prototype, not the requested engine editor.
 
 ## Result and limitations
 

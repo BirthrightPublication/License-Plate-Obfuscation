@@ -40,5 +40,9 @@
   "applicationRendersThroughTrueEngine": false,
   "sdkAssessment": "docs/TRUE-ENGINE-SDK-ASSESSMENT.md",
   "stableReleaseBlocked": true,
-  "currentSourceCompatibilityEvidence": "docs/true-engine-sdk-test-results.txt"
+  "currentSourceCompatibilityEvidence": "docs/true-engine-sdk-test-results.txt",
+  "currentSourceWindowsSdkAndLauncherRun": "https://github.com/BirthrightPublication/License-Plate-Obfuscation/actions/runs/38996217608",
+  "currentSourceTestedImplementationCommit": "9d278f846a2def5eb7751a72918b31b62042a559",
+  "currentSourceValidation": "docs/sdk-integration-validation.json",
+  "currentSourceValidationConclusion": "passed consumer and prototype packaging tests; integrated application blocked on SDK APIs"
 }

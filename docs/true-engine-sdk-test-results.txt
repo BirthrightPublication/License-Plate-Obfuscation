@@ -27,3 +27,35 @@ test engine_renders_edited_plate_camera_and_resized_target ... ok
 
 test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
 
+
+Remote consumer qualification observed from the public GitHub run annotations:
+Run: https://github.com/BirthrightPublication/License-Plate-Obfuscation/actions/runs/38996217608
+Implementation source: 9d278f846a2def5eb7751a72918b31b62042a559
+Ubuntu: CPU4passed, GPU1passed, 0failed/ignored. Adapter llvmpipe LLVM20.1.2,
+Mesa25.2.8-0ubuntu0.24.04.4, Vulkan, software/Cpu adapter.
+Windows: CPU4passed, GPU1passed, 0failed/ignored. Adapter Microsoft Basic Render
+Driver, DX12, software/Cpu adapter.
+Application Python suite: Ubuntu38discovered/37passed/1Windows-onlyskip;
+Windows38discovered/38passed/0skips, including actual cmd.exe alias/argv/exit-code
+checks. 0failures/errors on either platform.
+
+Initial run38995978921 failed Windows fixture short-vs-long path assertions and
+Linux adapter availability; neither was reported as success. Run38996083915
+confirmed the missing Linux adapter while CPU tests passed. Fixed the fixture's
+canonical path expectation, explicitly provisioned Mesa drivers in the Linux CI
+job, and kept missing adapters as hard failures. The host may request wgpu's
+software adapter when no default adapter is available; engine renderer/shaders
+and image assertions are unchanged.
+
+These are offscreen consumer and prototype launcher tests, not interactive input,
+hardware qualification, production engine integration or a released editor.
+
+Complete run38996217608 finished Success (3m21s). The windows-package job passed
+native prototype build, EXE checks, packaged Start batch, checksum/manifest,
+installation, interrupted recovery, personal-file preservation, HTTP assets and
+Chromium editing/save/reopen/export/import; candidate artifact upload succeeded.
+Tag-only publish/live-update jobs were skipped. The uploaded artifact is a
+prototype development candidate, NOT an integrated release or a new version.
+No stable asset/tag was published, no user installation was modified. Native
+Update BAT detached bootstrap/public-download end-to-end was not run in this
+branch job; existing protocol tests and historical acceptance remain separate.

@@ -19,7 +19,7 @@ Current evidence: the owner selected published True Engine v0.1.2, SDK0.1,
 commit8d751dbe76ca1dfd02c826e60ec68dda7e7d51b0. The compatibility manifest records
 that selection and explicitly states the production application does not render
 through True Engine. The separate Rust consumer has passed4CPU+1offscreen pixel
-checks on Linux Mesa llvmpipe/GL. This is programmatic software-renderer evidence,
+checks locally on Linux Mesa llvmpipe/GL and in Ubuntu/Vulkan and Windows/DX12 CI with software adapters. This is programmatic software-renderer evidence,
 not a Windows interactive editor or application integration test.
 
 See TRUE-ENGINE-SDK-ASSESSMENT.md: the supported Rust host owns device/surface and

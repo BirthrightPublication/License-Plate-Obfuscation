@@ -37,6 +37,7 @@ as the final editor. No new integrated release exists.
 - Packages are unsigned. Hosted/native/Linux tests cover their stated targets;
   they do not imply all user GPUs, Windows security prompts or interactive use
   passed. Network/rate-limit/file-lock/storage failures remain possible.
+- Native Update BAT detached bootstrap/public-download end-to-end was not run in this branch; its --check path, dispatch and backend fixture tests do not establish a live update on the user machine.
 - The cloud GitHub API tunnel currently returns403 even though native HTTPS Git
   reads/pushes work. PR/issue/Actions/release operations require separate confirmed
   access. No successful remote operation may be inferred from a local file.
