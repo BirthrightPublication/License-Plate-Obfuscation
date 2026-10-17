@@ -323,7 +323,9 @@ def install(root, archive, expected_version, probe=native_probe):
     txn = uuid.uuid4().hex
     with tempfile.TemporaryDirectory(prefix='stage-', dir=ctl) as tmp:
         stage = Path(tmp)
+        LOG.info('Validating and staging v%s', expected_version)
         manifest = extract_package(archive, stage, expected_version)
+        LOG.info('Checking staged Windows runtime')
         probe(stage / 'app')
         for name in sorted(ROOT_FILES):
             destination = root / name
@@ -338,7 +340,9 @@ def install(root, archive, expected_version, probe=native_probe):
         atomic_json(journal, record)
         try:
             if previous:
+                LOG.info('Backing up installed app to %s', backup)
                 move_code(app, backup)
+            LOG.info('Activating and checking the new application')
             move_code(stage / 'app', app)
             probe(app)
             verify_app(app)

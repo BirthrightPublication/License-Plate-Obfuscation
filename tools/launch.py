@@ -5,6 +5,7 @@ import http.server
 import json
 from pathlib import Path
 import re
+import socket
 import sys
 from urllib.parse import unquote, urlsplit
 import webbrowser
@@ -71,7 +72,15 @@ def make_server(root, port=4173):
         def log_message(self, *args):
             pass
 
-    return http.server.ThreadingHTTPServer(('127.0.0.1', port), Handler)
+    class Server(http.server.ThreadingHTTPServer):
+        allow_reuse_address = sys.platform != 'win32'
+
+        def server_bind(self):
+            if sys.platform == 'win32':
+                self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_EXCLUSIVEADDRUSE, 1)
+            super().server_bind()
+
+    return Server(('127.0.0.1', port), Handler)
 
 
 def main():

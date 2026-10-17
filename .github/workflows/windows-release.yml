@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: '24'
       - run: node --test tests/domain.test.js
-      - run: python -m unittest discover -s tests -p "test_*.py"
+      - run: python tools/run_tests_ci.py
   windows-package:
     needs: tests
     runs-on: windows-latest
