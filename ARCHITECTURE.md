@@ -1,8 +1,6 @@
-# Architecture — experimental prototype on development hold
+# Architecture — prototype and authorized engine integration restart
 
-The V0.1.2 interface is not approved as the final product. This document separates
-what exists from proposals. No competing renderer or visual implementation is
-authorized before a tested True Engine SDK and explicit restart approval.
+The V0.1.2 interface is not approved as the final product. The owner authorized integration restart with published True Engine v0.1.2. The SDK assessment identifies hard orthographic/text APIs missing before the complete editor can be built. No independent renderer or fake engine bridge is permitted.
 
 ## Existing code
 
@@ -18,11 +16,11 @@ No migration or project schema change is part of this audit.
 
 The source host tools/launch.py serves four allowlisted UI assets after root
 release.json validation, or a legacy Installed/current.json selection. START
-APPLICATION.bat invokes that Python route. This can work without a native app.
+APPLICATION.bat now forwards to primary Start Plate.bat; source-mode routing invokes that Python route. This can work without a native app.
 
 The distinct native distribution freezes the same host/UI in app/PlateStudio.exe,
 plus app/PlateUpdater.exe. Native Start/Update batch files require that layout
-beside themselves. A source checkout has no app directory; native files in a Build
+beside themselves. The repaired primary launchers recognize source mode separately; uppercase Update no longer invokes the legacy slot updater. A source checkout has no app directory; native files in a Build
 ZIP are not automatically installed. The screenshot matches the source layout.
 
 Legacy tools/updater.py manages Installed slots from root release.json full ZIPs;
@@ -42,8 +40,14 @@ one interchangeable installation or erase their histories.
   GPU scene/viewport/input, a thin documented-SDK adapter, domain commands/project
   storage, compact professional shell and separate source-linked legal metadata.
 
-The SDK must define the actual host/render/input contract. Do not invent APIs or
-implement a local engine fallback. A working engine proof must precede any editor
-redesign; explicit user restart approval is also required. No app version, source
-implementation, launcher, existing installation or project was changed by this
-architecture documentation update.
+## Selected SDK compatibility boundary
+
+True Engine0.1.2/SDK0.1 is pinned by immutable Git commit in the separate
+integration/true-engine-sdk-probe. It owns shaders, geometry submission, camera
+projection, picking and GPU draw calls. The consumer test owns an offscreen target
+and device lifecycle as documented; it is not the production app or a UI host.
+See docs/TRUE-ENGINE-SDK-ASSESSMENT.md for supported capabilities, exact missing
+APIs and next native-host requirements. No engine source is copied or modified.
+The production CSS assets, schema and storage remain unchanged. Native editor
+hosting can be implemented only after the complete requested capability contract
+exists; no CSS or custom renderer fallback will fill those gaps.

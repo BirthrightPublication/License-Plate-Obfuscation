@@ -1,6 +1,10 @@
 # Changelog
 
-## Unreleased — development hold and installation audit
+## Unreleased — SDK assessment and launcher repair
+
+Owner authorized integration restart and selected True Engine v0.1.2 (SDK0.1), pinned to immutable source. Added a separate Rust consumer compatibility test and precise engine feature request for missing orthographic projection and plate text/custom-mesh submission. The production application still uses the rejected CSS prototype; no renderer integration, new editor interface, version bump or integrated release is claimed. Consolidated primary Start/Update source/native routing with legacy uppercase aliases, explicit source-mode diagnostics and read-only checks. Existing installation/data migrations are not performed. Actual validation results and unrun Windows checks are recorded in TEST_REPORT.md.
+
+## Previous unreleased audit — development hold and installation audit
 
 Classified v0.1.2 as an experimental prototype with unapproved UI. Paused feature/visual implementation and feature-version advancement. Audited source/legacy/native launcher mismatches, missing app EXE paths and ZIP/build contracts using repository/archive evidence and the user screenshot. Documented a proposed one-launcher/update/repair layout, confirmation-gated repair plan, exact SDK gates and professional editor architecture. Corrected stale roadmap/architecture/known-issues guidance. No scripts, application logic, versions, tags, released binaries or user installations/data changed; no installer, build, repair or migration executed.
 

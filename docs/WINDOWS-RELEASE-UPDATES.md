@@ -1,3 +1,21 @@
+# Current source launcher repair and release gate
+
+Start Plate.bat and Update Plate.bat are the primary user-facing launchers in
+current source; uppercase START/UPDATE APPLICATION.bat are compatibility aliases.
+They prefer installed native EXEs; source-only mode uses tools/windows_entry.py
+and the existing Python helper. Source start labels the old unintegrated CSS
+prototype. Source update asks typed INSTALL confirmation before creating app/;
+read-only --check never downloads/installs. Native-only packages remain Python-
+free. These changes do not migrate an existing user folder or refresh old root
+BAT files automatically. The native updater intentionally never overwrites
+existing root scripts; a future repair requires exact paths and verified backups.
+
+The separate SDK consumer workflow is now a required packaging dependency, and
+new stable tags are refused while application integration is incomplete. Current
+selected engine0.1.2/SDK0.1 lacks required orthographic/text APIs; no new integrated
+release is available. Full evidence and unrun Windows checks: TEST_REPORT.md.
+The following contract describes the existing native0.1.2 update system.
+
 # Windows GitHub release / update contract (protocol 1)
 
 Target installation: `B:\License Plate Studio`. Target source/build directory:

@@ -21,7 +21,7 @@ This project's authoritative source of truth is https://github.com/BirthrightPub
 
 ## Cross-repository integration
 
-True Engine is an independent reusable engine. Depend only on an explicitly versioned release or commit and record/test compatibility. No SDK version has been supplied for this application yet; integration remains blocked rather than fabricated. Do not duplicate or silently alter engine code in this repository. Any engine changes require their own authorized task/commits in the engine repository and tests against affected applications.
+True Engine is an independent reusable engine. Depend only on an explicitly versioned release or commit and record/test compatibility. The selected SDK is true-engine0.1.2, contract0.1, commit8d751dbe76ca1dfd02c826e60ec68dda7e7d51b0. Application integration remains blocked by the documented missing orthographic/text submission APIs. Do not duplicate or silently alter engine code in this repository. Any engine changes require their own authorized task/commits in the engine repository and tests against affected applications.
 
 ## Release completion report
 

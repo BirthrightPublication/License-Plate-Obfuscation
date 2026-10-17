@@ -1,57 +1,50 @@
-# Experimental V0.1.2 — development hold and known issues
+# Experimental V0.1.2 — SDK integration restart and known issues
 
-**The current interface is not approved. Feature/visual development and feature
-version advancement are frozen until explicit user approval and a tested True
-Engine foundation.** Published artifact history remains intact; this classification
-does not alter, delete or retag a release.
+The owner authorized engine/interface integration restart and selected published
+True Engine v0.1.2/SDK0.1. The current landing-page/CSS prototype is still rejected
+as the final editor. No new integrated release exists.
 
-- The source root mixes START APPLICATION.bat (Python/developer), UPDATE/ROLLBACK
-  APPLICATION.bat (legacy Installed slots) and Start/Update/Rollback Plate.bat
-  (native app layout). These are not interchangeable installations.
-- The user's screenshot shows the source layout and no visible app folder. Native
-  Start requires app/PlateStudio.exe. Native Update requires app/PlateUpdater.exe
-  or .plate-studio/recovery-updater.exe. Both are absent in this cloud checkout;
-  Update cannot contact GitHub or self-repair a source-only folder without a native
-  bootstrap. Start's suggestion to use Update is misleading in this condition.
-- The complete published native ZIP DOES contain both x64 EXEs. Having a ZIP in
-  Build does not install it. The user's full B: path and Build contents were not
-  visible in the screenshot; no separate Windows installation was inspected here.
-- BUILD WINDOWS.bat installs PyInstaller in a temporary Python venv and creates a
-  ZIP/checksum. It does not install app beside the launcher or integrate True Engine.
-  Transitive build requirements are not fully locked for byte-identical rebuilds.
-- Root release.json and VERIFY RELEASE validate four browser assets, not a complete
-  native app. Generic Build/release.json/SHA256SUMS.txt are historical 0.1.0 sidecars;
-  use the matching package-specific checksums, not generic files for other versions.
-- The compatibility filename is true-engine.compatibility.json (hyphen), not the
-  underscore spelling. SDK package/version remain null. No engine adapter/render
-  integration exists; CSS perspective/rotation is an HTML prototype only.
-- No professional engine viewport, real mouse camera, pan/zoom, object editing,
-  compact approved editor shell or dark theme exists. Do not continue the current
-  landing-page UI as the final product or implement a substitute renderer.
-- No dedicated repair utility exists. Legacy and native updaters accept full
-  packages only. Versioned patches, exact-base patch verification and simplified
-  maintenance launchers are proposals, not implemented capabilities. Existing
-  scripts must stay until approved replacements work and pass tests.
+- SDK contract lacks orthographic projection usable by Renderer.draw and suitable
+  plate-text/custom-mesh submission. Material support is opaque color only. See
+  docs/TRUE-ENGINE-SDK-ASSESSMENT.md and docs/TRUE-ENGINE-FEATURE-REQUEST.md.
+- The standalone Git-pinned SDK probe tests actual supported engine behavior;
+  passing it does not integrate the application's UI or qualify interactive
+  Windows11 GPU/input behavior. Read TEST_REPORT.md for exact run/skip status.
+- Source/native primary launchers now distinguish layouts and preserve uppercase
+  aliases. Source starts remain explicitly labeled experimental and use the same
+  browser profile/origin/pointer as before. A damaged app must not silently fall
+  back to source. Repository fixes do not modify copies already on a user's PC.
+- Source-only native updating needs Python3.12 and explicit confirmation of the
+  target root. It preserves source/legacy files and does not migrate user data.
+  Complete native packages retain their embedded runtime/updater route.
 - Native updates refuse same-version reinstall/downgrade and unknown/modified app
-  contents. Therefore the current update command is not a generic repair utility.
-  Root launchers are not overwritten automatically. Earlier layouts are not
-  silently migrated. Keep recovery/backups; do not run updates as a diagnostic.
-- User state is one browser save slot plus separate research notes. Project JSON
-  excludes notes and view angle. Clearing site data, changing origin/profile or
-  overwriting the save slot can lose access to prior state. Repair must preserve
-  data and export/copy it before any specifically approved mutation.
-- There is no official style/eligibility dataset, reviewed legal determination,
-  authorized availability provider, membership or vehicle-model integration. Legal
-  remains Unverified; risk is unassessed. External media tools/data remain untouched.
-- Historical Windows native/browser/install/recovery/live-update tests passed for
-  the prototype's packaging. They do not prove professional-editor readiness,
-  design approval or a working True Engine SDK. This audit did not execute native
-  code, installers, dependency scripts, repairs or destructive tests.
-- Packages are unsigned; network/rate-limit/locked-file/storage failures remain
-  possible. Logs/backups/runners/downloads accumulate until explicitly maintained.
-  No original data/media, unknown files, legacy releases or scripts were removed.
+  contents. Update is not a generic repair. Root launchers are not automatically
+  overwritten; customized/older launcher migration needs a verified backup plan.
+- Recovery-updater copies are retained, not automatically refreshed. Recovery is
+  based on prior verified app backups; no backup exists before first installation.
+- A ZIP in Build is not an installation. BUILD WINDOWS creates a package using a
+  temporary Python/PyInstaller environment; it does not create an installed app
+  beside source. Binary rebuilds are not guaranteed byte-identical.
+- Only app is replaceable. Every other project/settings/history/media/output/
+  preset/custom configuration path and browser data must remain preserved.
+  No exact B: folder or existing installation has been inspected from this cloud.
+- Current project schema stores name/state/text in one browser slot. Notes and
+  view angle are not exported. Preserve same localhost:4173 browser origin/profile;
+  export projects and copy important notes before any approved migration.
+- No approved professional engine editor, official plate-artwork catalog,
+  authoritative availability provider, reviewed legal assessment, membership or
+  vehicle integration exists. Legal is Unverified; regulatory risk is unassessed.
+- Packages are unsigned. Hosted/native/Linux tests cover their stated targets;
+  they do not imply all user GPUs, Windows security prompts or interactive use
+  passed. Network/rate-limit/file-lock/storage failures remain possible.
+- The cloud GitHub API tunnel currently returns403 even though native HTTPS Git
+  reads/pushes work. PR/issue/Actions/release operations require separate confirmed
+  access. No successful remote operation may be inferred from a local file.
+- No project/media/settings, source script, prior package or release tag was
+  deleted. Exact-base patch ZIP support and a dedicated repair utility remain
+  future work; existing updater accepts verified full packages only.
 
-See docs/INSTALLATION-AUDIT.md for exact evidence and script line references,
-docs/INSTALLATION-REPAIR-PLAN.md for proposed structure/confirmation gates, and
-docs/TRUE-ENGINE-UI-ARCHITECTURE.md for engine/UI plans. No repair is approved or
-performed by these documents.
+Historical audit evidence is preserved in docs/INSTALLATION-AUDIT.md. The safe
+repair plan and professional UI target remain in docs/INSTALLATION-REPAIR-PLAN.md
+and docs/TRUE-ENGINE-UI-ARCHITECTURE.md, with latest SDK/restart facts superseding
+their prior audit-only hold language.

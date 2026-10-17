@@ -1,3 +1,72 @@
+# Current source iteration — SDK assessment and launcher repair
+
+The owner authorized integration restart and selected published True Engine
+v0.1.2/SDK0.1, commit8d751dbe76ca1dfd02c826e60ec68dda7e7d51b0. No new application
+version or integrated release has been produced. Historical release results below
+remain associated with their original tagged source and binaries.
+
+## Actual local execution
+
+- Linux; Python3.12.14, Node24.19.0, Rust1.85.1.
+- `npm test`: **5 Node passed**; Python **38 discovered, 37 passed, 1 skipped**.
+  The skip is the explicit Windows-only cmd.exe primary/alias batch test. It was
+  not simulated or claimed passed here.
+- The 10 passing new launcher tests cover source/native selection, exact app hash/
+  inventory verification in Python dispatch, damaged-app refusal without source
+  fallback, legacy pointer/argv/exit-code preservation, recovery selection,
+  journal-only refusal, explicit source-install confirmation/cancellation,
+  read-only diagnostics, root override rejection and fixture-file preservation.
+- Existing updater tests exercised checksum/download fixtures, staging/activation
+  failure rollback, journal recovery, unknown-file refusal and preservation of
+  projects/settings/history/original and processed media/output/template markers
+  in temporary test roots. Fixture EXEs are not native-executable validation.
+- `python3 tools/windows_entry.py --root . start -- --check` and the corresponding
+  `update -- --check`: passed. No browser, network download or installation.
+- Source dispatcher was started with `--no-browser` on a temporary test port;
+  actual HTML and JavaScript requests succeeded. Only our own host process group
+  was stopped. The production default remains localhost:4173; no user browser or
+  browser data was opened or changed.
+- External Rust SDK consumer: **4 CPU +1 GPU tests passed**, 0 failed/ignored.
+  Exact command: `cargo +1.85.1 test --locked -- --nocapture`.
+  CPU: plate dimensions/rotation/color, scene/project save-reopen, picking, camera
+  orbit/pan/zoom and changed viewport aspect. GPU: real public Engine Renderer
+  pixel readback, visible scaled cube plate, red-to-blue material update, changed
+  camera image, and64x64-to96x48 resize. Adapter: **Mesa llvmpipe LLVM19.1.7,
+  GL software rendering**. Full output: docs/true-engine-sdk-test-results.txt.
+- `cargo fmt --all -- --check` and `git diff --check`: passed.
+- Reusable environment install_script was executed end-to-end after saving;
+  app/domain, Python and locked SDK checks passed again. It installs/activates
+  Rust1.85.1 under /workspace/.tools, preserves dependency lockfiles and keeps
+  generated outputs outside tracked source. start_skill was updated with the
+  exact prerequisites, tests and present SDK blockers. Saving does not publish
+  a cloud environment or verify another restored instance.
+
+## Unrun and blocked checks
+
+No native Windows execution, real mouse/window events, Windows GPU/driver test,
+new Windows build, updater download on the user's PC, existing-installation
+repair, data migration, or application/engine integration test ran here.
+No app UI asset changed; no new browser visual test is claimed.
+
+The reusable SDK workflow now runs CPU/GPU checks on both Ubuntu and Windows and
+is a dependency of Windows packaging/publication. A missing adapter fails, never
+silently skips. These new remote jobs have not been observed from this cloud.
+The cloud's api.github.com tunnel returned403; successful Git access is separate.
+A stable-tag guard additionally refuses publication while the compatibility
+manifest says the app does not render through True Engine or SDK capabilities
+remain blocked. Future actual editor acceptance must supplement the probe; a
+standalone rendering test is not production integration.
+
+## Result and limitations
+
+Local development/testing is available. SDK0.1 lacks orthographic and suitable
+plate-text/custom-mesh submission, so the complete requested editor is blocked.
+The production app stays the rejected experimental CSS prototype0.1.2. No new
+version/tag/package/checksum or integrated Windows release is claimed. Existing
+release files, projects/settings/browser data, scripts and source are preserved.
+
+---
+
 # 0.1.2 release/update validation
 
 Current local environment: Linux, Python 3.12.14, Node 24.19.0. Local `npm test`

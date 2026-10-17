@@ -3,7 +3,7 @@
   "application": "LICENSE PLATE OBFUSCATION STUDIO",
   "version": "0.1.2",
   "previousVersion": "0.1.1",
-  "status": "published and live-update validated",
+  "status": "v0.1.2 historical release preserved; current source integration restart blocked on SDK capabilities",
   "distribution": "self-contained Windows-x64 EXEs with default-system-browser UI",
   "assetPattern": "License-Plate-Studio-v[VERSION]-windows-x64.zip",
   "checksumPattern": "License-Plate-Studio-v[VERSION]-windows-x64.zip.sha256",
@@ -22,16 +22,23 @@
   "packageSha256": "3fa3cbf5c4f9e3569ab424f00a128a2ac4deb6b24234de98cf6ba5d50faa9938",
   "releaseAcceptanceRun": "https://github.com/BirthrightPublication/License-Plate-Obfuscation/actions/runs/38992985878",
   "productMaturity": "experimental-prototype",
-  "developmentHold": true,
+  "developmentHold": false,
   "interfaceApproved": false,
   "featureVersionAdvancementAllowed": false,
   "visualImplementationAllowed": false,
   "repairRequiresExplicitConfirmation": true,
   "restartPrerequisites": [
-    "Explicit approval to restart relevant True Engine work",
-    "Tested versioned True Engine SDK and operational proof",
-    "Explicit approval to resume Plate Studio implementation"
+    "Owner integration restart and published SDK selection received",
+    "Required orthographic and plate text/custom-geometry APIs still missing",
+    "Actual integrated application/Windows acceptance required before release"
   ],
   "installationAudit": "docs/INSTALLATION-AUDIT.md",
-  "proposedRepairPlan": "docs/INSTALLATION-REPAIR-PLAN.md"
+  "proposedRepairPlan": "docs/INSTALLATION-REPAIR-PLAN.md",
+  "currentIteration": "SDK compatibility proof and source/native launcher repair; no integrated release",
+  "selectedTrueEngineVersion": "0.1.2",
+  "selectedTrueEngineCommit": "8d751dbe76ca1dfd02c826e60ec68dda7e7d51b0",
+  "applicationRendersThroughTrueEngine": false,
+  "sdkAssessment": "docs/TRUE-ENGINE-SDK-ASSESSMENT.md",
+  "stableReleaseBlocked": true,
+  "currentSourceCompatibilityEvidence": "docs/true-engine-sdk-test-results.txt"
 }

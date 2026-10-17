@@ -1,15 +1,27 @@
-DEVELOPMENT HOLD / EXPERIMENTAL PROTOTYPE NOTICE
-The v0.1.2 interface is not approved as the final design. Feature/visual work and
-feature-version advancement are paused pending explicit restart approval and a
-tested True Engine SDK. The historical instructions below are not authorization
-to repair, install over, migrate or replace an existing installation.
+INTEGRATION RESTART / EXPERIMENTAL PROTOTYPE NOTICE
+The owner selected published True Engine v0.1.2/SDK0.1 and authorized integration
+work. The SDK is missing orthographic and supported plate-text/custom-mesh APIs.
+The current application remains the rejected CSS prototype, not a real engine
+editor. No new integrated Windows release is available from this source work.
 
-The current source folder and the native app folder are different layouts.
-START APPLICATION.bat runs Python source; Start Plate.bat requires app\PlateStudio.exe.
-Update Plate.bat cannot bootstrap if both native updater and recovery copy are
-missing. BUILD WINDOWS.bat makes an archive; it does not install that app folder.
-See docs/INSTALLATION-AUDIT.md and docs/INSTALLATION-REPAIR-PLAN.md in current source.
-No scripts have been retired. Obtain approval for exact repair paths/changes first.
+PRIMARY LAUNCHERS IN CURRENT SOURCE
+Use Start Plate.bat. START APPLICATION.bat forwards to it. A complete native app
+is selected when app/ exists; a damaged app does not silently fall back to source.
+Without app/, source mode is labeled as the experimental prototype and uses
+Python3.12+ via the existing run-python helper. Same browser profile/localhost:4173
+and legacy saved-version selection are preserved. Start Plate.bat --check is a
+read-only diagnostic that does not open a browser or install anything.
+
+Use Update Plate.bat. UPDATE APPLICATION.bat forwards to it, not the incompatible
+legacy slot updater. Complete native installs use the bundled updater/recovery
+EXE. Source-only use requires Python3.12+ and confirmation before installing app/
+in the shown root. Do not confirm until the exact target and backups are reviewed.
+Update Plate.bat --check does not download or install. No source files, old launchers,
+projects/media/settings or prior packages are removed by this repository update.
+Already-installed launcher copies are not changed merely by a source push.
+
+The following describes the HISTORICAL0.1.2 Windows prototype package, not an
+integrated editor or instructions to overwrite an existing installation.
 
 LICENSE PLATE STUDIO - WINDOWS X64 RELEASE / UPDATE SYSTEM
 Version 0.1.2 Windows release/update package. Consult the GitHub Release's Windows test report

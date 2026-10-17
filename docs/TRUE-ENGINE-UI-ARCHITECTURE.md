@@ -1,7 +1,12 @@
 # True Engine integration gate and proposed editor architecture
 
-**PLAN ONLY. No renderer, engine adapter, camera system, revised UI or feature
-version is implemented here. The current CSS prototype is not approved.**
+**Editor architecture target; not implemented in the application.**
+
+Update: the owner authorized integration restart and selected published Engine
+v0.1.2/SDK0.1. The separate consumer probe exercises real rendering; it is not an
+app adapter or editor. See TRUE-ENGINE-SDK-ASSESSMENT.md for the selected public
+contract and hard text/orthographic gaps. Those current facts supersede historical
+audit-only approval/SDK-absence language below. No competing renderer is permitted.
 
 ## Permanent engine boundary
 
@@ -10,38 +15,40 @@ https://github.com/BirthrightPublication/True-Engine. Plate Studio must consume 
 tested, versioned SDK, not copy its source, modify the engine repository or build
 a competing renderer. CSS transforms must never be described as engine integration.
 
-Current evidence: true-engine.compatibility.json has sdkPackage/sdkVersion null,
-no tested engine versions and blocked-sdk-not-supplied. package.json has no engine
-SDK dependency. Browser code manipulates HTML/CSS, not an engine scene. The studio
-EXE embeds this browser host; native packaging did not add an engine. This does
-not determine what may exist in the separate engine repository; it establishes
-that Plate Studio has no selected/delivered/tested SDK integration.
+Current evidence: the owner selected published True Engine v0.1.2, SDK0.1,
+commit8d751dbe76ca1dfd02c826e60ec68dda7e7d51b0. The compatibility manifest records
+that selection and explicitly states the production application does not render
+through True Engine. The separate Rust consumer has passed4CPU+1offscreen pixel
+checks on Linux Mesa llvmpipe/GL. This is programmatic software-renderer evidence,
+not a Windows interactive editor or application integration test.
 
-## Required gates before any redesign implementation
+See TRUE-ENGINE-SDK-ASSESSMENT.md: the supported Rust host owns device/surface and
+calls public Renderer APIs. Orthographic projection and suitable text/custom-mesh
+submission are missing. The CSS application remains unchanged and unapproved.
 
-1. User explicitly approves restarting the relevant True Engine development in
-   its OWN project. This audit is not that approval and changes no engine files.
-2. Engine maintainers deliver a designated tested SDK release or commit, package
-   source/artifact/checksum, authoritative API documentation, supported Windows
-   host/embedding contract, runtime dependencies, compatibility/license terms,
-   and evidence that its sample runs on the target GPU/platform.
-3. Record exact SDK version/commit and API/ABI constraints in the existing
-   compatibility manifest. Do not invent a version, API symbol or minimum SDK.
-   Until delivery, those fields remain null. Missing capabilities become explicit
-   requests to engine maintainers, not private API calls or local engine copies.
-4. After explicit integration approval, run an isolated Windows SDK proof against
-   documented interfaces: attach a supported render surface, render a real mesh,
-   resize, navigate camera with real mouse input, select/edit an object, release
-   resources, and reopen the scene. Test device/error handling and supported
-   software/driver combinations as the SDK contract permits. Evidence must show
-   True Engine owns rendering, not a CSS/WebGL substitute written in this app.
-5. Only after engine operation is proven AND the user approves resuming Plate
-   Studio work may the approved editor design be implemented. A working SDK alone
-   does not automatically lift the development hold or authorize V0.2.
+## Remaining gates before production redesign
 
-SDK changes later require an exact dependency update, compatibility matrix,
-application regression tests and release notes. Engine changes belong in a
-separate engine task/repository, not this application's working tree.
+1. Owner restart approval and exact SDK selection have been received. No new
+   general restart approval is needed to continue this authorized integration
+   iteration. No True Engine source modifications are authorized in this repo.
+2. Engine maintainers must deliver the missing supported APIs in a tested,
+   versioned SDK. TRUE-ENGINE-FEATURE-REQUEST.md gives the exact requests; do not
+   invent a future minimum version or duplicate engine implementation locally.
+3. Pin the compatible SDK commit, update the compatibility manifest and lockfile,
+   and rerun external CPU/GPU tests. Validate actual native Windows rendering and
+   failure handling; software Linux pixels do not qualify user hardware.
+4. Implement the professional editor through supported engine APIs: actual GPU
+   plate geometry/text, materials, orbit/pan/zoom, perspective/orthographic,
+   picking/property editing, responsive resize and data-preserving save/reopen.
+   No fake CSS viewport or renderer/camera fallback may satisfy acceptance.
+5. Validate the complete editor and full installation/update/recovery package on
+   Windows before publishing a new integrated version/tag. Preserve the existing
+   prototype release, source history and all projects/settings/media.
+
+SDK changes require exact dependency updates, compatibility evidence, application
+regression tests and release notes. Any needed engine code change belongs to a
+separate authorized engine task, never this application's working tree. Later
+roadmap phases still require approval after the first working studio is verified.
 
 ## Responsibility split (capabilities, not invented SDK calls)
 
