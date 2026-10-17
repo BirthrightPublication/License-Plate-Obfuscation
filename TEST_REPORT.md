@@ -14,14 +14,9 @@ outputs, presets, preferences/history, templates, custom tools, Build source and
 unknown personal files. Unknown/modified files in app refuse updates. Fixture
 EXEs are fake bytes and are not claimed as native executable validation.
 
-The GitHub Actions workflow is configured to run tests on Windows and Linux,
-build real self-contained x64 EXEs, validate full ZIP/checksum/manifest structure,
-execute both EXE self-checks and Start Plate.bat, install and recover a real native
-package, serve its UI, and run Chromium editing/save/browser-reopen/export/import
-checks against the frozen host. These Windows/Actions checks are **not yet confirmed
-in this local report**; consult actual workflow results and the generated
-windows-test-report.txt artifact. Local Linux tests do not establish Windows readiness.
+Actual GitHub Actions run [38992808983](https://github.com/BirthrightPublication/License-Plate-Obfuscation/actions/runs/38992808983) passed on source commit cdde601 (full SHA recorded in Git). Both Windows and Linux unit jobs passed. The Windows-package job passed its real native build, complete ZIP/checksum/manifest checks, both EXE self-checks, Start Plate.bat, native installation and interrupted recovery with personal marker files intact, loopback HTTP/JS delivery, Chromium editing/save/reopen/export/import and artifact upload. This is actual Windows runner validation, not simulated Linux execution. A prior initial Windows job failed; exclusive Windows socket binding was corrected and subsequent Windows runs passed. Superseded branch runs were cancelled intentionally.
 
+This validates the implementation before release. The final tag workflow rebuilds its exact source and must pass the same checks before publication. The live public download/update job runs only after publication; its actual result and permanent release report must be verified separately.
 Stable tag publication uploads a draft full ZIP/checksum and native report,
 re-downloads them with gh and verifies SHA-256, then publishes. A development build
 or successful Git push does not prove this publication/download step succeeded.

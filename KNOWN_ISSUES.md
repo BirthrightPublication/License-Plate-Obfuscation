@@ -1,6 +1,6 @@
-# Known limitations — 0.1.2 release/update candidate
+# Known limitations — 0.1.2 release/update system
 
-- Native Windows builds require a Windows x64 runner. The source contains the full build/update/test workflow; actual Windows pass/publication must be confirmed separately from local Linux tests. No unsigned executable is claimed to be code-signed or SmartScreen approved.
+- Native Windows builds require a Windows x64 runner. Actual Windows build, native runtime, install/recovery and Chromium tests passed in Actions run 38992808983. Stable tag publication/live public updates must still be confirmed from their own workflow results. No unsigned executable is claimed to be code-signed or SmartScreen approved.
 - The default installation path is now B:\License Plate Studio. Legacy layouts are preserved and not silently migrated. First install must use a new empty destination, followed by one-click updates; never extract over user files.
 - Root launchers use a stable bootstrap contract and are never overwritten automatically. All managed app files must match their manifest. Extra files/modifications in app cause refusal; store custom data outside app.
 - Update backups, failed candidates, external updater runners, downloaded builds and logs are retained, so disk usage grows until the user intentionally archives them. Disk/permission/lock failures are reported; unrelated processes are never killed.

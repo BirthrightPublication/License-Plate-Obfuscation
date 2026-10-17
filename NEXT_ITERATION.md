@@ -1,11 +1,5 @@
-# Current authorized objective
+# Current release objective
 
-Finish the 0.1.2 GitHub Windows release/update system and verify the Windows Actions
-run before tagging/publishing a stable release. Inspect current branch/status and
-actual remote results; do not call a candidate a released Windows build. The API
-network restriction may still block PR/release control from this cloud. Do not
-rewrite published tags or silently skip native tests.
+Implementation 0.1.2 passed Windows/Linux CI, native build/install/recovery and Chromium tests in run 38992808983. Complete and verify the v0.1.2 tag workflow, GitHub Release assets and live-update acceptance report before claiming publication success. Read actual remote state, not chat alone. API operations from this cloud may be blocked; Git native push and public web inspection work independently.
 
-After this iteration, await Windows user testing of Update Plate.bat under
-B:\License Plate Studio. No new editor phase is authorized. True Engine SDK/version
-is still missing; V0.1 viewport/camera/theme/project gaps remain. Do not begin V0.2.
+After publication, await Windows user testing of Update Plate.bat under B:\License Plate Studio. No new editor phase is authorized. Preserve all previous source/tags/packages and every personal file outside managed app. True Engine SDK/version is still missing; V0.1 viewport/camera/theme/project gaps remain. Do not begin V0.2.

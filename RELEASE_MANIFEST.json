@@ -3,7 +3,7 @@
   "application": "LICENSE PLATE OBFUSCATION STUDIO",
   "version": "0.1.2",
   "previousVersion": "0.1.1",
-  "status": "candidate; Windows build and publication must be independently confirmed",
+  "status": "Windows implementation verified; stable asset publication/live update evidence is in the tag workflow and GitHub Release",
   "distribution": "self-contained Windows-x64 EXEs with default-system-browser UI",
   "assetPattern": "License-Plate-Studio-v[VERSION]-windows-x64.zip",
   "checksumPattern": "License-Plate-Studio-v[VERSION]-windows-x64.zip.sha256",
@@ -15,5 +15,6 @@
   "trueEngineVersion": null,
   "windowsWorkflow": ".github/workflows/windows-release.yml",
   "nativeTest": "tools/test_windows_release.py",
-  "newEditorFeatures": []
+  "newEditorFeatures": [],
+  "verifiedWindowsImplementationRun": "https://github.com/BirthrightPublication/License-Plate-Obfuscation/actions/runs/38992808983"
 }
