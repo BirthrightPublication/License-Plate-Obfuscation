@@ -1,5 +1,9 @@
 # License Plate Obfuscation Studio · v0.1.1
 
+Authoritative source: [BirthrightPublication/License-Plate-Obfuscation](https://github.com/BirthrightPublication/License-Plate-Obfuscation), stable branch `main`. The initial complete source and release tags are preserved there. Read [repository rules](docs/GITHUB-REPOSITORY-RULES.md) before updates and [release history](docs/releases/history.json) for exact source/package associations. True Engine remains a separate repository, with no SDK dependency integrated yet.
+
+For the exact tested release source, clone this repository and check out `v0.1.1`; `main` may contain later repository documentation. `release.json` describes the immutable packaged release, so full file-hash verification is intended for the extracted ZIP or tagged source, not a later development checkout with modified documentation. Application assets remain unchanged in this repository-management update. No new application version is being released.
+
 A runnable, local-first browser foundation with Windows launch scripts. This is a packaging maintenance release of the existing V0.1 UI, **not a compiled Windows executable or completed V0.1 roadmap milestone**. True Engine is not integrated; its versioned SDK has not been supplied.
 
 Read **README - FIRST TIME SETUP.txt** for Windows extraction, Python setup, launch, manual testing, backup, update and rollback instructions. Keep ZIPs in `B:\License Plate Obfuscation Studio\Build`, extract each release to a new folder under `B:\License Plate Obfuscation Studio\Releases`, and double-click `START APPLICATION.bat`. A current browser and Python 3.12+ are required; no runtime npm packages are needed. `B:\True Engine` is not touched or required.

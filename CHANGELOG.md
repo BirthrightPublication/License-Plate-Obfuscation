@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased — repository preservation
+
+Preserved the verified source and original v0.1.0/v0.1.1 tags on the authoritative GitHub repository. Added permanent Git/PR/release rules, source/package history and actual package validation records; expanded exclusions for local secrets, databases, projects and dependency/build caches. This is repository maintenance, with no application changes or new release version. GitHub API-based PR/release asset operations remain blocked by the environment's api.github.com CONNECT denial.
+
 ## 0.1.1 — 2026-10-16
 
 Packaging maintenance for testing the existing V0.1 UI on Windows: direct START APPLICATION.bat, prerequisite installer, restricted localhost launcher with asset verification, corrected full-release updater entry points and retention of the verified manifest in version slots, verification script, first-time instructions, optional local Windows PyInstaller build script, expanded browser/launcher tests and continuity documentation. No new editor features. Earlier release ZIPs and all source files are retained; modified sources are preserved by the v0.1.0 Git tag. Windows execution remains unverified.

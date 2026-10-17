@@ -1,5 +1,13 @@
 # License Plate Obfuscation Studio
 
+## Authoritative repository and Git workflow
+
+The authoritative repository for this conversation is https://github.com/BirthrightPublication/License-Plate-Obfuscation, with stable branch `main`. FORGE and True Engine are separate projects. Read docs/GITHUB-REPOSITORY-RULES.md before development or release work.
+
+Before each update, inspect status/branch/remotes and fetch origin; compare with origin/main and inspect the implementation. Preserve unrelated and uncommitted work. Develop on a dedicated feature branch, make meaningful commits, run applicable tests and document architectural decisions. Push the branch and open a PR where supported; merge approved changes without force-pushing stable history. Confirm remote refs before reporting success. Never claim an API operation, push, merge or asset upload succeeded without evidence.
+
+Preserve completed version history and tags. docs/releases/history.json associates release filenames/checksums with exact tagged source commits. Publish ZIPs as release assets rather than committing build binaries. Keep local release ZIPs in Build; never overwrite older packages or replace newer source with an older ZIP. GitHub API restrictions must be reported separately from native Git access. Do not begin new editor features while Windows V0.1 test feedback remains outstanding.
+
 This repository is independent of True Engine. Never edit the engine repository. Use only documented, explicitly versioned SDK interfaces; do not invent SDK APIs. No future phase without user approval.
 
 v0.1.0 is an educational foundation, not a production road-plate design or legal service. Never optimize physical plate configurations to evade identification. Never infer legality, availability, or low risk from missing data. Keep verified evidence, interpretation, and unavailable information distinct. Legal classifications and five-level risk assessments are independent.

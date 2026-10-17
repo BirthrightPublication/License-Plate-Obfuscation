@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "repository": "BirthrightPublication/License-Plate-Obfuscation",
+  "repositoryUrl": "https://github.com/BirthrightPublication/License-Plate-Obfuscation",
+  "stableBranch": "main",
+  "releases": [
+    {
+      "version": "0.1.0",
+      "tag": "v0.1.0",
+      "sourceCommit": "be085ce440ba89879a2df20367abadc9b17cc7ae",
+      "sourceUrl": "https://github.com/BirthrightPublication/License-Plate-Obfuscation/tree/v0.1.0",
+      "package": "License-Plate-Obfuscation-Studio-0.1.0.zip",
+      "packageSha256": "8450f726b8a14c6186403ee751ebb00d22f5eeac02fe2b7ea0bfba2e85f6445c",
+      "packageLocation": "Build/License-Plate-Obfuscation-Studio-0.1.0.zip (local workspace)",
+      "githubAssetUploaded": false,
+      "tests": "RELEASE-REPORT.md at tag v0.1.0; original five Node and three Python tests plus browser smoke",
+      "recommendation": "Historical only; use v0.1.1 packaging revision 2 for first-time Windows tests",
+      "limitations": ["Windows untested", "Original updater expects a separate Build ZIP", "No True Engine SDK"]
+    },
+    {
+      "version": "0.1.1",
+      "tag": "v0.1.1",
+      "sourceCommit": "32890f02aa4df58fa6ea927a58a3c3fb0198fd8a",
+      "sourceUrl": "https://github.com/BirthrightPublication/License-Plate-Obfuscation/tree/v0.1.1",
+      "package": "License-Plate-Obfuscation-Studio-0.1.1-Windows-Portable-r2.zip",
+      "packageSha256": "fc84895da46f08e9e18335d300b1938ebf1a0fb94bfc408b35cee4c1198986f0",
+      "packageLocation": "Build/License-Plate-Obfuscation-Studio-0.1.1-Windows-Portable-r2.zip (local workspace)",
+      "githubAssetUploaded": false,
+      "packageManifest": "docs/releases/v0.1.1-package-manifest.json",
+      "packageTestResults": "docs/releases/v0.1.1-package-test.txt",
+      "tests": "5 Node and 9 Python tests; Chromium smoke and extracted-package actual update/rollback tests passed",
+      "patch": null,
+      "limitations": ["Runnable browser package, not compiled Windows EXE", "Windows launch/build scripts untested on Windows", "No True Engine SDK", "V0.1 roadmap incomplete"]
+    }
+  ],
+  "remoteAssetBlocker": "api.github.com CONNECT requests are denied with HTTP 403 by the execution environment; Git HTTPS push succeeds independently.",
+  "historyPolicy": "Append future records; do not rewrite published tags or overwrite historical packages. No new application release is created by repository-governance documentation."
+}

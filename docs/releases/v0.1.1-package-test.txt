@@ -1,0 +1,18 @@
+PASS: v0.1.1 application assets verified.
+PASS: v0.1.0 application assets verified.
+PASS browser: 50 states, initial rendering, uppercase text, mouse slider/reset, save, actual browser close/reopen/load, export/import, malformed import rejection, notes persistence, unavailable lookup, Unverified legal status, 390px layout, no script errors
+{
+  "archive": "License-Plate-Obfuscation-Studio-0.1.1-Windows-Portable-r2.zip",
+  "sha256": "fc84895da46f08e9e18335d300b1938ebf1a0fb94bfc408b35cee4c1198986f0",
+  "platform": "linux",
+  "checks": [
+    "all packaged file hashes match",
+    "actual 0.1.0 to 0.1.1 installation and rollback both directions",
+    "project/settings marker files and earlier version preserved",
+    "repeat install refused without changing active pointer",
+    "extracted launcher starts from a path with spaces and serves active UI",
+    "extracted release full Chromium browser smoke test",
+    "all packaged hashes unchanged after running"
+  ],
+  "filesVerified": 39
+}
