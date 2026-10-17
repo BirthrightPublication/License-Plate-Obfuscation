@@ -1,0 +1,18 @@
+PASS: v0.1.2 application assets verified.
+PASS: Plate Studio updater 0.1.2
+PASS: v0.1.2 application assets verified.
+Recovered previous app from interrupted/failed update
+PASS browser: 50 states, initial rendering, uppercase text, mouse slider/reset, save, actual browser close/reopen/load, export/import, malformed import rejection, notes persistence, unavailable lookup, Unverified legal status, 390px layout, no script errors
+{
+  "platform": "Windows",
+  "package": "License-Plate-Studio-v0.1.2-windows-x64.zip",
+  "version": "0.1.2",
+  "sha256": "3fa3cbf5c4f9e3569ab424f00a128a2ac4deb6b24234de98cf6ba5d50faa9938",
+  "checks": [
+    "ZIP/checksum complete; both native EXEs and Start Plate.bat execute",
+    "real native package installed and runtime verified",
+    "interrupted rename recovered native app; all personal marker files intact",
+    "Chromium browser editing/save/reopen/export/import on frozen Windows host",
+    "native process serves real UI and ES module assets over loopback HTTP"
+  ]
+}

@@ -15,7 +15,11 @@
       "githubAssetUploaded": false,
       "tests": "RELEASE-REPORT.md at tag v0.1.0; original five Node and three Python tests plus browser smoke",
       "recommendation": "Historical only; use v0.1.1 packaging revision 2 for first-time Windows tests",
-      "limitations": ["Windows untested", "Original updater expects a separate Build ZIP", "No True Engine SDK"]
+      "limitations": [
+        "Windows untested",
+        "Original updater expects a separate Build ZIP",
+        "No True Engine SDK"
+      ]
     },
     {
       "version": "0.1.1",
@@ -30,9 +34,41 @@
       "packageTestResults": "docs/releases/v0.1.1-package-test.txt",
       "tests": "5 Node and 9 Python tests; Chromium smoke and extracted-package actual update/rollback tests passed",
       "patch": null,
-      "limitations": ["Runnable browser package, not compiled Windows EXE", "Windows launch/build scripts untested on Windows", "No True Engine SDK", "V0.1 roadmap incomplete"]
+      "limitations": [
+        "Runnable browser package, not compiled Windows EXE",
+        "Windows launch/build scripts untested on Windows",
+        "No True Engine SDK",
+        "V0.1 roadmap incomplete"
+      ]
+    },
+    {
+      "version": "0.1.2",
+      "tag": "v0.1.2",
+      "sourceCommit": "a04ce38494241d69b268b1f12cb04eae724a15ec",
+      "sourceUrl": "https://github.com/BirthrightPublication/License-Plate-Obfuscation/tree/v0.1.2",
+      "releaseUrl": "https://github.com/BirthrightPublication/License-Plate-Obfuscation/releases/tag/v0.1.2",
+      "package": "License-Plate-Studio-v0.1.2-windows-x64.zip",
+      "packageSha256": "3fa3cbf5c4f9e3569ab424f00a128a2ac4deb6b24234de98cf6ba5d50faa9938",
+      "packageUrl": "https://github.com/BirthrightPublication/License-Plate-Obfuscation/releases/download/v0.1.2/License-Plate-Studio-v0.1.2-windows-x64.zip",
+      "checksumUrl": "https://github.com/BirthrightPublication/License-Plate-Obfuscation/releases/download/v0.1.2/License-Plate-Studio-v0.1.2-windows-x64.zip.sha256",
+      "githubAssetUploaded": true,
+      "platform": "windows-x64",
+      "trueEngineVersion": null,
+      "updaterProtocol": 1,
+      "workflowRun": "https://github.com/BirthrightPublication/License-Plate-Obfuscation/actions/runs/38992985878",
+      "tests": "5 Node and 27 Python tests on Linux and Windows; native EXEs/batch/HTTP/browser/install/recovery passed; real public GitHub update and already-current path passed on Windows",
+      "packageManifest": "docs/releases/v0.1.2-package-manifest.json",
+      "changedSourceFiles": "docs/releases/v0.1.2-changed-source-files.txt",
+      "nativeReport": "docs/releases/v0.1.2-windows-test-report.txt",
+      "liveReport": "docs/releases/v0.1.2-live-update-test-report.txt",
+      "patch": null,
+      "limitations": [
+        "Windows packages unsigned",
+        "Current browser required",
+        "No True Engine SDK; V0.1 editor roadmap incomplete"
+      ]
     }
   ],
-  "remoteAssetBlocker": "api.github.com CONNECT requests are denied with HTTP 403 by the execution environment; Git HTTPS push succeeds independently.",
+  "remoteAssetBlocker": "Cloud API requests remain restricted; v0.1.2 was successfully published and verified through GitHub Actions. Older legacy assets were not uploaded.",
   "historyPolicy": "Append future records; do not rewrite published tags or overwrite historical packages. No new application release is created by repository-governance documentation."
 }

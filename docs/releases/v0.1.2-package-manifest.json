@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "application": "birthright.license-plate-studio",
+  "version": "0.1.2",
+  "platform": "windows-x64",
+  "sourceCommit": "a04ce38494241d69b268b1f12cb04eae724a15ec",
+  "updaterProtocol": 1,
+  "trueEngine": null,
+  "distribution": "PyInstaller self-contained runtime, default-system-browser UI",
+  "files": {
+    "CHANGELOG.md": "04e3d2cd4d2797f2f4789179294ee02b485f10a1f8e313139c06cd091dbbeec8",
+    "KNOWN_ISSUES.md": "84196c2f512829151d360bc116426a1ad913fa20cba8eb8ced2f5ca5ca0090e8",
+    "PlateStudio.exe": "87768d7fec5ef24de207f1b9101df5bae055b414bf23413b46b2f32b2c33c96b",
+    "PlateUpdater.exe": "92fde78fc4b83f8ba6e83dd24a719a715333104abff22a07d54bd34804cfe9a1",
+    "true-engine.compatibility.json": "2d7d47b8cc6fb1d087d3933684268c1f4be6c8e819928c0f7e2ee27bb30c8e8c"
+  }
+}

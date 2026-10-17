@@ -1,5 +1,7 @@
-# Current release objective
+# Next objective after v0.1.2
 
-Implementation 0.1.2 passed Windows/Linux CI, native build/install/recovery and Chromium tests in run 38992808983. Complete and verify the v0.1.2 tag workflow, GitHub Release assets and live-update acceptance report before claiming publication success. Read actual remote state, not chat alone. API operations from this cloud may be blocked; Git native push and public web inspection work independently.
+v0.1.2 is published at https://github.com/BirthrightPublication/License-Plate-Obfuscation/releases/tag/v0.1.2. Tagged source a04ce38494241d69b268b1f12cb04eae724a15ec. Exact ZIP hash and permanent test reports are in docs/releases/history.json. Run 38992985878 passed Windows/Linux tests, native build/install/recovery/browser checks, publication and a real public GitHub update on Windows. Do not retag or overwrite this release.
 
-After publication, await Windows user testing of Update Plate.bat under B:\License Plate Studio. No new editor phase is authorized. Preserve all previous source/tags/packages and every personal file outside managed app. True Engine SDK/version is still missing; V0.1 viewport/camera/theme/project gaps remain. Do not begin V0.2.
+Await the user's Windows 11 installation/update feedback under B:\License Plate Studio. Fix reported launch/update/data issues before new editor features. Preserve all personal projects/media/configurations, older packages and source. Only verified managed app code is replaceable.
+
+No further feature iteration is authorized. True Engine SDK/version remains missing. V0.1 camera/theme/project gaps remain; do not begin V0.2 or modify the engine. On a later authorized update fetch/inspect main, use a feature branch, test, push, obtain review where supported, merge approved work, tag exact source and verify both release assets and live update acceptance.

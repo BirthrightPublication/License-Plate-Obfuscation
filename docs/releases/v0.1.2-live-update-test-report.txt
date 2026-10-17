@@ -1,0 +1,15 @@
+{
+  "version": "0.1.2",
+  "sourceCommit": "a04ce38494241d69b268b1f12cb04eae724a15ec",
+  "platform": "Windows x64",
+  "checks": [
+    "public latest stable API",
+    "real HTTPS asset download",
+    "outer checksum",
+    "complete ZIP and per-file manifest",
+    "native runtime before/after activation",
+    "original media/projects/settings/preferences/history preserved",
+    "second check reports already current"
+  ],
+  "sha256": "3fa3cbf5c4f9e3569ab424f00a128a2ac4deb6b24234de98cf6ba5d50faa9938  License-Plate-Studio-v0.1.2-windows-x64.zip"
+}

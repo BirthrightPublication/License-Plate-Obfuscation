@@ -28,3 +28,9 @@ No current True Engine compatibility tests exist: SDK/version/commit absent.
 No production legal/data-provider claims, code signing, performance benchmarks,
 new editor controls or media-processing features are included. Prior 0.1.0/0.1.1
 source, ZIPs and test records remain preserved in tags and release history.
+
+## Completed v0.1.2 publication and live update
+
+Run [38992985878](https://github.com/BirthrightPublication/License-Plate-Obfuscation/actions/runs/38992985878) validated exact tagged source a04ce38494241d69b268b1f12cb04eae724a15ec, published the complete Windows ZIP/checksum and native report, and passed its real public updater acceptance on Windows. The final job attached live-update-test-report.txt successfully; the withdraw-to-draft failure step was skipped. The public ZIP was independently downloaded here and its outer checksum, app manifest and exact source commit verified. No source archive was substituted for an executable installation package.
+
+SHA-256: 3fa3cbf5c4f9e3569ab424f00a128a2ac4deb6b24234de98cf6ba5d50faa9938. Permanent native/live reports, package manifest and changed-source-file inventory are under docs/releases/v0.1.2-*. Earlier pre-publication statements are chronological evidence; this completed run establishes publication and live-update success. Consumer Windows 11 hardware, default-browser auto-opening and unsigned-download prompts still require the user's manual first-use checklist; hosted Windows validation does not cover every PC configuration.

@@ -2,7 +2,7 @@
 
 ## 0.1.2 — 2026-10-16
 
-Standardized self-contained windows-x64 installation assets; public-GitHub latest-stable updater; SHA-256/per-file checks, OS locking, staged verification, backup/journal/recovery and explicit rollback; stable root launchers; source/build/data separation; Windows/Linux CI and Windows native/browser packaging tests. Default target B:\License Plate Studio. No new editor features or engine integration. Windows build/native/browser validation passed in Actions run 38992808983. Stable release publication and live update results are recorded by the tag workflow.
+Standardized self-contained windows-x64 installation assets; public-GitHub latest-stable updater; SHA-256/per-file checks, OS locking, staged verification, backup/journal/recovery and explicit rollback; stable root launchers; source/build/data separation; Windows/Linux CI and Windows native/browser packaging tests. Default target B:\License Plate Studio. No new editor features or engine integration. Windows build/native/browser validation passed in Actions run 38992808983. Exact publication and real public Windows update acceptance passed in run 38992985878; complete ZIP/checksum and native/live reports are published on GitHub Releases.
 
 ## Unreleased — repository preservation
 

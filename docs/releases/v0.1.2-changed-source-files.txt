@@ -1,0 +1,37 @@
+.github/workflows/windows-release.yml
+.gitignore
+AGENTS.md
+ARCHITECTURE.md
+BUILD WINDOWS.bat
+CHANGELOG.md
+KNOWN_ISSUES.md
+NEXT_ITERATION.md
+README - FIRST TIME SETUP.txt
+README.md
+RELEASE_MANIFEST.json
+Rollback Plate.bat
+Start Plate.bat
+TEST_REPORT.md
+Update Plate.bat
+docs/GITHUB-REPOSITORY-RULES.md
+docs/WINDOWS-RELEASE-UPDATES.md
+docs/releases/history.json
+docs/releases/v0.1.1-SHA256SUMS.txt
+docs/releases/v0.1.1-package-manifest.json
+docs/releases/v0.1.1-package-test.txt
+index.html
+package.json
+release.json
+tests/test_github_updater.py
+tools/build_windows.py
+tools/github_updater.py
+tools/launch.py
+tools/release.py
+tools/release_notes.py
+tools/requirements-windows-build.txt
+tools/run_tests_ci.py
+tools/smoke.cjs
+tools/test_live_update.py
+tools/test_windows_release.py
+tools/windows_release.py
+true-engine.compatibility.json
