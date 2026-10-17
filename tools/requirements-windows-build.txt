@@ -1,0 +1,2 @@
+# Windows x64 Python 3.12. Runtime dependencies are embedded by PyInstaller.
+PyInstaller==6.16.0

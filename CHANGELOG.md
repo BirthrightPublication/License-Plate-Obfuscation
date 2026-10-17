@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2 — release/update candidate
+
+Standardized self-contained windows-x64 installation assets; public-GitHub latest-stable updater; SHA-256/per-file checks, OS locking, staged verification, backup/journal/recovery and explicit rollback; stable root launchers; source/build/data separation; Windows/Linux CI and Windows native/browser packaging tests. Default target B:\License Plate Studio. No new editor features or engine integration. Candidate until Windows tests and stable publication are confirmed.
+
 ## Unreleased — repository preservation
 
 Preserved the verified source and original v0.1.0/v0.1.1 tags on the authoritative GitHub repository. Added permanent Git/PR/release rules, source/package history and actual package validation records; expanded exclusions for local secrets, databases, projects and dependency/build caches. This is repository maintenance, with no application changes or new release version. GitHub API-based PR/release asset operations remain blocked by the environment's api.github.com CONNECT denial.

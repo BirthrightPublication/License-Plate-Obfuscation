@@ -1,31 +1,35 @@
-# v0.1.1 validation report
+# 0.1.2 release/update validation
 
-Executed in Linux cloud on 2026-10-16 (America/Los_Angeles). Runtime: Python 3.12.14, Node v24.19.0, Playwright 1.62.1, system Chromium 154.0.8037.57. Windows 11 is the intended test target, not a platform tested here.
+Current local environment: Linux, Python 3.12.14, Node 24.19.0. Local `npm test`
+passed **5 Node tests and 27 Python tests**, 0 failed/0 skipped. The Python total
+includes 18 new GitHub updater tests plus 9 existing launcher/legacy updater tests.
 
-## Executed against working source
+New tests cover stable asset selection and exact repository URLs, numeric versions,
+HTTP transport/download orchestration using injected fixture responses, checksum
+rejection, archive traversal/reserved/case-collision rejection, manifest tampering,
+full install/update/rollback, post-activation and staging failures, interrupted
+rename/activation recovery, rollback failure, exclusive update locks, offline
+failure and preservation of marker files for projects, original/processed media,
+outputs, presets, preferences/history, templates, custom tools, Build source and
+unknown personal files. Unknown/modified files in app refuse updates. Fixture
+EXEs are fake bytes and are not claimed as native executable validation.
 
-- `npm test`: **5 Node tests passed; 9 Python tests passed; 0 failed; 0 skipped.** Node tests cover all states, preview syntax, independent legal/risk unknowns, unavailable lookup, and project schema/import boundaries. Python tests cover update/rollback, data preservation, corrupt/unsafe ZIP refusal, failed-update pointer preservation, patch refusal, compatible Build discovery, asset tamper detection, localhost/allowlisted HTTP serving with module MIME types, and occupied-port refusal.
-- `python3 tools/launch.py --check`: passed with the prepared per-file manifest.
-- `STUDIO_URL=http://localhost:4183 CHROMIUM_PATH=/usr/bin/chromium node tools/smoke.cjs`: passed against the new Python launcher. Exercises 50 state options, initial rendering, real-time uppercase text, mouse drag on Orbit slider, reset, single-slot save, actual browser close/reopen/load using a persistent test profile, JSON download/export and import, malformed-import rejection without losing the current preview, persistent research notes, unavailable-provider message, Unverified legal status, 390px layout and no page script errors. Does not test free-camera pan/zoom because they do not exist.
-- `python3 tools/build_windows.py`: correctly refused on Linux with a specific no-cross-compilation message. This is a checked platform guard, NOT a successful Windows build.
+The GitHub Actions workflow is configured to run tests on Windows and Linux,
+build real self-contained x64 EXEs, validate full ZIP/checksum/manifest structure,
+execute both EXE self-checks and Start Plate.bat, install and recover a real native
+package, serve its UI, and run Chromium editing/save/browser-reopen/export/import
+checks against the frozen host. These Windows/Actions checks are **not yet confirmed
+in this local report**; consult actual workflow results and the generated
+windows-test-report.txt artifact. Local Linux tests do not establish Windows readiness.
 
-## Corrected failure during release validation
+Stable tag publication uploads a draft full ZIP/checksum and native report,
+re-downloads them with gh and verifies SHA-256, then publishes. A development build
+or successful Git push does not prove this publication/download step succeeded.
+Live latest-release updates cannot be asserted until a compatible stable release
+actually exists and the operation succeeds. API access from this cloud has returned
+HTTP 403; no GitHub asset-upload success is claimed here.
 
-The first 0.1.1 candidate failed the real-package rollback test: the updater had not copied release.json into version slots. Fixed by retaining the verified manifest; the existing update/rollback test now explicitly asserts its presence. The first candidate ZIP is retained unchanged and is not the recommended download. Packaging revision r2 includes this correction and is the intended test package.
-
-## Release packaging validation
-
-`tools/test_package.py` is the reproducible post-packaging acceptance command. It extracts the actual ZIP into a fresh temporary path containing spaces, verifies all file hashes, exercises its own launcher, installs real 0.1.0 and 0.1.1 artifacts, rolls back in both directions, verifies personal project/settings marker files survive, refuses a repeated install, runs the Chromium UI smoke test, and rechecks packaged hashes after execution. Its actual run output and ZIP hash are saved separately in Build alongside the final artifact after packaging. No checksum is fabricated inside this report.
-
-## Original release audit
-
-The original Build/License-Plate-Obfuscation-Studio-0.1.0.zip remains unchanged with SHA-256 `8450f726b8a14c6186403ee751ebb00d22f5eeac02fe2b7ea0bfba2e85f6445c`. Its RELEASE-REPORT.md recorded five Node tests, three Python updater tests, one browser workflow and ZIP hash/installation checks. The earlier browser smoke used a test URL at 127.0.0.1 and did not prove persistence across an actual browser restart; the new test does that using localhost. Its .cmd launchers were unrun. The old package's updater expected a Build ZIP outside its own extracted contents, so it was not a self-contained first-time Windows distribution.
-
-## Unrun / unavailable
-
-- Windows 11 batch launchers, WinGet installation, native PyInstaller EXE build, unsigned-download prompts, Windows browser interactive checklist, B: paths and native EXE behavior. No Windows runtime, Wine or PowerShell is available here. The Windows build script is supplied, not claimed tested.
-- Browser default-app auto-opening: headless checks use --no-browser; verify this manually on Windows.
-- Current legal source contents, interpretation, official artwork/eligibility datasets, live authorized plate availability, True Engine SDK integration, membership, vehicle models and unsupported roadmap tools.
-- Automated screenshot pixel comparison, accessibility audit, performance benchmarks and other browser engines. No speed improvement or complete render correctness is claimed.
-
-No existing source was deleted, prior ZIPs were overwritten, or user data was migrated. Modified v0.1.0 source remains recoverable via its Git tag. Browser-only data remains subject to origin/profile and browser clearing; the manual checklist explicitly tests reopen and export/import on the user's Windows computer.
+No current True Engine compatibility tests exist: SDK/version/commit absent.
+No production legal/data-provider claims, code signing, performance benchmarks,
+new editor controls or media-processing features are included. Prior 0.1.0/0.1.1
+source, ZIPs and test records remain preserved in tags and release history.

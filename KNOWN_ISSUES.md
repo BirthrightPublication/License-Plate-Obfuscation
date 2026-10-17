@@ -1,12 +1,11 @@
-# Known limitations — 0.1.1
+# Known limitations — 0.1.2 release/update candidate
 
-- No native Windows executable was built in Linux. Batch execution, WinGet and optional PyInstaller build need Windows testing. No Wine, PowerShell or Windows build host is available here.
-- True Engine SDK/version absent. B:\True Engine is neither installed nor changed.
-- V0.1 roadmap incomplete: CSS preview only; no mesh renderer, pan, zoom, mouse drag camera, dark theme, New command or multi-project library.
-- One browser-local project save slot. Saving another project replaces that slot; export first. Notes are separate and not included in JSON backups. Browser/site data clearing destroys local storage.
-- Orbit/view angle is temporary and is not saved in a project.
-- No jurisdiction-specific eligibility validation, current legal review, official style artwork, authorized availability adapters, vehicle models or membership integration.
-- Three curated official research sources, unverified for current content. All legal results are Unverified; no risk score is assigned.
-- Updater supports only full release packages; patches are explicitly rejected. An initial managed install has no previous managed version to roll back to. No automatic runtime/browser rollback or cryptographic publisher signature.
-- Managed activation requires closing the current server. Port changes would create a different browser storage origin. A conflicting process yields an error; the launcher does not terminate it.
-- Python 3.12+ and a current browser are required for this portable distribution. Native Windows output, if built locally, is unsigned and may trigger Windows reputation checks.
+- Native Windows builds require a Windows x64 runner. The source contains the full build/update/test workflow; actual Windows pass/publication must be confirmed separately from local Linux tests. No unsigned executable is claimed to be code-signed or SmartScreen approved.
+- The default installation path is now B:\License Plate Studio. Legacy layouts are preserved and not silently migrated. First install must use a new empty destination, followed by one-click updates; never extract over user files.
+- Root launchers use a stable bootstrap contract and are never overwritten automatically. All managed app files must match their manifest. Extra files/modifications in app cause refusal; store custom data outside app.
+- Update backups, failed candidates, external updater runners, downloaded builds and logs are retained, so disk usage grows until the user intentionally archives them. Disk/permission/lock failures are reported; unrelated processes are never killed.
+- Public GitHub latest-release checks can fail due to network policy, outages or rate limits. Installed data/code stays intact. A checksum from the same publisher detects corruption, not publisher compromise; signed distribution is future work.
+- Only full windows-x64 packages/protocol 1 are supported. Prereleases, downgrades and reinstalls are refused. Explicit rollback needs a prior backup. Old source archives and legacy ZIP layouts are not compatible installation packages.
+- True Engine is not integrated; exact SDK version/commit unavailable. No engine code is duplicated or changed.
+- Existing V0.1 UI is partial: CSS plate preview and Orbit slider, no engine mesh/free camera/pan/zoom/dark theme/New command/multi-project library. One browser save slot; orbit is transient. Notes are not part of JSON exports.
+- No jurisdiction-specific official artwork/validation dataset, current legal review, live availability adapters, vehicle models, membership or media-processing tools. Everything outside managed app, including any external media tools, is preserved without alteration.

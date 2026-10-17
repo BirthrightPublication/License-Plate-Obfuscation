@@ -9,3 +9,7 @@ Python tools/launch.py verifies packaged asset hashes, binds only 127.0.0.1:4173
 Full-release ZIPs include complete runnable assets, source/tests/docs and Python tools; no native binary is implied. A separate Windows-only script can freeze the host and its assets using PyInstaller. The resulting EXE still uses an external browser. No cross-compilation or engine integration occurs.
 
 Managed updater stages and verifies full releases, retains version slots and atomically switches a current/previous pointer under Installed. It refuses existing slots and patch packages. Hashes detect corruption, not malicious publisher changes; signed distribution remains a later milestone. Failed pre-activation checks leave the active pointer intact. Runtime failure recovery is manual rollback.
+
+## 0.1.2 Windows distribution decision
+
+The current update system uses two PyInstaller onefile EXEs (studio host and separate updater), a versioned managed app manifest, external updater runners and journaled app-directory swaps. This avoids requiring end-user Python while keeping the existing browser UI, data schema and origin. Only app is replaceable; every root data/config/media path is preserved. tools/updater.py remains as a legacy-only full-package updater for historical workflows; new installations use tools/github_updater.py and the standardized ZIP. See docs/WINDOWS-RELEASE-UPDATES.md for protocol, failure recovery and test/publication boundaries.

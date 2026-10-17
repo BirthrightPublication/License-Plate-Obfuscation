@@ -1,7 +1,11 @@
-# Next objective
+# Current authorized objective
 
-Stop after this 0.1.1 packaging and validation iteration. First obtain the user's Windows 11 test results for the existing V0.1 build using README - FIRST TIME SETUP.txt. Diagnose installation/launch/save/reopen failures before new editor features.
+Finish the 0.1.2 GitHub Windows release/update system and verify the Windows Actions
+run before tagging/publishing a stable release. Inspect current branch/status and
+actual remote results; do not call a candidate a released Windows build. The API
+network restriction may still block PR/release control from this cloud. Do not
+rewrite published tags or silently skip native tests.
 
-V0.1 remains incomplete. Required integration prerequisite: versioned True Engine SDK package/repository, exact release and documented host/platform contract. Do not invent a minimum SDK version. Any engine capability request must be recorded without editing engine source.
-
-Only after Windows test feedback and authorization, finish the remaining V0.1 milestone (engine viewport, orbit/pan/zoom, dark interface and proper New/save/open). Do not begin V0.2. On an authorized Continue, inspect this file, AGENTS.md, the actual repository, master roadmap, manifests and changelog, then perform one iteration.
+After this iteration, await Windows user testing of Update Plate.bat under
+B:\License Plate Studio. No new editor phase is authorized. True Engine SDK/version
+is still missing; V0.1 viewport/camera/theme/project gaps remain. Do not begin V0.2.

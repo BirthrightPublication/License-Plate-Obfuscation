@@ -7,5 +7,5 @@ if errorlevel 1 (
   pause
   exit /b 1
 )
-echo Build completed. See the new timestamped Native build folder inside Build.
+echo Build completed. See the standardized windows-x64 ZIP and checksum inside Build.
 pause

@@ -1,141 +1,99 @@
-LICENSE PLATE OBFUSCATION STUDIO
-V0.1.1 - WINDOWS TEST PACKAGE (V0.1 packaging fixes; no new editor features)
+LICENSE PLATE STUDIO - WINDOWS X64 RELEASE / UPDATE SYSTEM
+Version 0.1.2 release candidate. Consult the GitHub Release's Windows test report
+for actual build/test status. Source alone is NOT an installation ZIP.
 
-WHAT THIS IS
-This is a runnable browser application with a Windows batch launcher and a small
-Python local web host. It is NOT a compiled Windows .exe, a True Engine build,
-or the completed V0.1 milestone in the master roadmap. The browser renders the
-plate with CSS 3D transforms. You do not need Node, npm, a compiler, or True Engine
-to run this portable package. Python is a separately documented prerequisite.
+SUPPORTED INSTALLATION
+Windows 11 x64 and a current Edge, Chrome or Firefox browser. The standardized
+installation package embeds its Python runtime. No Python or Node installation
+is required to use the Windows release. True Engine is not integrated or required.
 
-The cloud build machine is Linux. It has no Windows runtime/compiler environment
-for producing and testing a native Windows executable. BUILD WINDOWS.bat can
-produce an optional self-contained .exe ON YOUR WINDOWS COMPUTER. That .exe still
-opens the same browser UI; it does not add an engine viewport or new features.
+FIRST INSTALL (ONCE)
+1. From https://github.com/BirthrightPublication/License-Plate-Obfuscation/releases
+   download BOTH assets:
+   License-Plate-Studio-v[VERSION]-windows-x64.zip
+   License-Plate-Studio-v[VERSION]-windows-x64.zip.sha256
+   Do NOT download GitHub's automatic 'Source code' archives as an installer.
+2. Keep downloads under B:\License Plate Studio\Build. Verify the ZIP's SHA-256
+   with PowerShell Get-FileHash and compare the full hash with the .sha256 file.
+3. Extract the ZIP to a NEW EMPTY folder. It contains app/, Start Plate.bat,
+   Update Plate.bat, Rollback Plate.bat, and this guide.
+   Recommended installed location: B:\License Plate Studio. If that directory
+   already contains application code, first extract into a separate new folder;
+   do not approve overwriting existing files. Preserve the old installation.
+   Build and personal data are allowed alongside app, but first extraction must
+   never overwrite a pre-existing app or root launcher. No silent legacy migration.
+4. Double-click Start Plate.bat. Keep its console open. The browser opens at
+   localhost:4173. Use the same browser/profile/origin for existing saved projects.
+5. Test the checklist below before relying on the installation.
 
-QUICK INSTALL - WINDOWS 11
-1. Download License-Plate-Obfuscation-Studio-0.1.1-Windows-Portable-r2.zip.
-   Put the ZIP in B:\License Plate Obfuscation Studio\Build.
-   If that folder does not exist, create it. Do not remove earlier ZIPs.
-2. Optional but recommended: verify the ZIP against the separately supplied
-   SHA256SUMS file. In PowerShell run:
-   Get-FileHash -Algorithm SHA256 -LiteralPath 'B:\License Plate Obfuscation Studio\Build\License-Plate-Obfuscation-Studio-0.1.1-Windows-Portable-r2.zip'
-   Compare the entire hash with the release checksum file. A checksum detects
-   corruption, not publisher authenticity. Only use trusted release files.
-3. Right-click the ZIP > Extract All. Choose a NEW empty folder:
-   B:\License Plate Obfuscation Studio\Releases\0.1.1
-   The folder must contain START APPLICATION.bat directly (not inside a second
-   nested folder). If the destination is nonempty, choose a different new folder.
-   Never extract over an earlier installation, source files, or user projects.
-4. Have Python 3.12+ installed and a current Edge, Chrome or Firefox browser.
-   If Python is missing, double-click INSTALL DEPENDENCIES.bat. It uses Windows
-   Package Manager to install Python 3.12 for your user. Internet is required.
-   If automatic installation fails, install from:
-   https://www.python.org/downloads/windows/
-   Include the Python launcher. No application Python packages need installing.
-5. Double-click START APPLICATION.bat in the extracted folder.
-   A console stays open and your default browser should open automatically.
-   If the browser does not open, type http://localhost:4173 into it manually.
-   Do not double-click index.html: ES modules need the supplied local host.
-6. Keep the console window open while using the app. To quit, export a backup,
-   close the browser tab, then press Ctrl+C in the console or close the console.
-   To reopen, double-click START APPLICATION.bat and use the same browser profile.
+ONE-CLICK UPDATES
+Close the application console before updating. Double-click Update Plate.bat.
+It copies the updater out of app so Windows can replace all app files, checks
+GitHub's latest stable release, compares numeric versions, downloads the exact
+compatible Windows ZIP and checksum, verifies them, stages the new app, runs its
+native integrity self-check, backs up the old app, activates and verifies the new
+app. If validation/activation fails, it restores the previous app automatically.
+No administrator privileges are needed when the installation folder is writable.
+Progress/errors remain in a console and .plate-studio\logs. Downloads remain in
+Build; backups remain in .plate-studio\backups; failed code is retained separately.
+The updater does not force-close processes or kill an application in use. If files
+are locked, close Studio and retry; the original app is restored/retained.
 
-B:\True Engine is your intended separate engine directory. This package does not
-install, write to, or require that directory. No SDK version has been supplied.
+Recovery after power loss: run Update Plate.bat again. Its recovery-updater fallback
+can restore the old app if app/ is temporarily missing. The OS releases the update
+lock after a crash. Recovery occurs before any new network request. Keep the
+.plate-studio directory. No backup is automatically garbage-collected. A network
+failure may be reported after successful recovery; Start Plate.bat can then open
+the restored version. Rollback Plate.bat selects the most recently retained prior
+verified version. Initial installation has no prior version to roll back to.
 
-WHAT YOU SHOULD SEE
-A light cream/green page headed B / BIRTHRIGHT and the title 'A space to design.
-A place to understand.' The header reads v0.1.1 FOUNDATION. On a wide window:
-- Left: state selector, preview text and official source-link area.
-- Center: grid background, generic cream plate initially reading STUDIO and
-  California, an Orbit slider and Reset view button.
-- Right: Unverified legal status and an unassessed compliance-risk explanation.
-- Below: local project controls and a research-notes text area.
-The page rearranges into stacked panels on a narrow browser window.
-There is no standalone 3D-engine window or membership sign-in screen.
+NEVER-OVERWRITTEN DATA
+Only app/ is replaceable, and only when its entire file inventory and hashes match
+its install manifest. Do not place user data inside app/. Unmanaged files or local
+code/config modifications there cause update refusal instead of deletion.
+Everything outside app/ is preserved, including:
+Projects, Media, Original Media, Processed Media, Output, Exports, Presets, Templates,
+Configurations, settings.json, export-preferences.json, history.json, custom tools,
+and ANY other unknown personal file/folder. Build source checkouts are untouched;
+only new, non-conflicting release ZIP/checksum files are added there. Existing root
+launchers are not overwritten. .plate-studio is updater-owned recovery/log storage.
+Browser localStorage is outside the installation. It stores one project slot and
+research notes; clearing browser/site data deletes those. Export project backups
+before saving another project. Notes are not included in project JSON exports.
 
-BASIC MANUAL TEST CHECKLIST
-[ ] Launch: the console prints READY and the UI loads with no missing assets.
-[ ] Rendering: select Texas; the state label on the plate updates immediately.
-[ ] Text: enter ABC123; the plate updates without reloading. Lowercase typed
-    interactively becomes uppercase. Preview syntax is not registration approval.
-[ ] Mouse/orbit: drag the Orbit SLIDER with the mouse. The plate tilts sideways.
-    Click Reset view and it returns to its initial angle. Keyboard arrow keys
-    work on the focused slider. Dragging the plate itself does NOT orbit it.
-[ ] Viewport: resize the browser; panels remain readable. No pan, zoom, wheel
-    zoom, 3D object picking, geometry editing, or free-camera control exists.
-[ ] Save: give the project a recognizable name; click Save on this device and
-    confirm the saved message. This stores ONE project slot, not a file on B:.
-[ ] Reopen: close the tab and stop/restart the launcher. Use the SAME browser
-    profile and http://localhost:4173. Click Load saved project; the text, state
-    and project name should return. Projects do not automatically load at startup.
-[ ] Export: click Export backup; save the JSON to a personal Projects folder,
-    such as B:\License Plate Obfuscation Studio\Projects. Change the preview,
-    then Import backup, select that JSON, and verify it restores the project.
-    Click Save after importing if you want it retained in the local save slot.
-[ ] Notes: type a research note, reload the page and confirm it persists.
-    Notes are NOT included in exported project JSON; copy important notes to
-    a separate file before clearing browser data.
-[ ] Availability: click Check availability options; expect an explicit
-    unavailable-provider message, not an invented available/unavailable plate.
-[ ] Legal: California, Texas and New York have official research links. All
-    states remain Unverified; no numeric compliance-risk assessment is assigned.
-    Live source currency and legal interpretation have not been verified.
+WHAT TO EXPECT / MANUAL TEST CHECKLIST
+The existing light cream/green Birthright studio loads with a generic STUDIO plate
+on a grid, state/text controls, Unverified legal status, and project/research panels.
+[ ] Plate and controls render without missing assets.
+[ ] Change state to Texas and text to ABC123; both update immediately.
+[ ] Drag the Orbit SLIDER with the mouse and click Reset view. Dragging the plate
+    itself, pan, zoom and free-camera control are NOT implemented.
+[ ] Save a named project, close the browser and console, restart Start Plate.bat,
+    and click Load saved project in the SAME browser profile/origin.
+[ ] Export a JSON backup, change the text, import the JSON, and verify restoration.
+[ ] Type a research note and reload. It should remain; copy important notes to a
+    separate file before clearing browser data.
+[ ] Availability displays an explicit unavailable-provider message. All legal
+    assessments stay Unverified; compliance risk is unassessed.
+[ ] After an update, confirm saved project/notes and personal files still exist.
+There is no new media-processing functionality in this application. Existing
+external tools/media/configurations are preserved without being modified.
 
-DATA PRESERVATION AND TROUBLESHOOTING
-Keep the same browser, profile and exact http://localhost:4173 origin. Switching
-to 127.0.0.1, another port, private browsing or another profile changes storage.
-One save overwrites the single browser save slot, so export before saving a new
-project. Clearing browser/site data deletes projects and notes. Releases do not
-read, delete or migrate B:\True Engine or personally created files.
+BUILD FROM SOURCE (DEVELOPERS)
+GitHub source/build files belong in B:\License Plate Studio\Build (for example
+Build\Source). On Windows x64 with x64 Python 3.12 and Node 24, use BUILD WINDOWS.bat.
+It installs the pinned PyInstaller build requirement in an isolated temporary
+venv and runs tools/windows_release.py. A clean Git commit is required; generated
+packages include its full SHA. Output uses the exact standardized filenames in
+Build and refuses to overwrite an earlier build. The workflow runs tests before
+publication and attaches a Windows-native test report. Linux cannot cross-compile
+this distribution. A current browser remains a separate system prerequisite.
+The executables are unsigned; do not disable Windows security protections.
 
-If the console says the port is occupied, close the earlier Studio console and
-try again. Do not change ports to look for old projects. If verification fails,
-extract the trusted ZIP to another new folder; do not replace source files.
-If Windows blocks a download, verify its source and hash; do not disable security
-protections. The batch scripts and optional native EXE are unsigned.
-
-OPTIONAL UPDATES AND ROLLBACK
-Direct first-time launch does not require the updater. For its managed mode,
-create Build under this extracted release folder, copy the full portable ZIP
-there, then run UPDATE APPLICATION.bat. It finds the latest compatible full ZIP,
-verifies every file hash and installs a new version under Installed\versions.
-It never overwrites an existing version directory. The prior managed version is
-retained and the activation pointer is replaced atomically after validation.
-Root START APPLICATION.bat uses the managed active version if one exists.
-An unsuccessful pre-activation update leaves the active version unchanged.
-Only full releases are supported; patches are refused. Reapplying an installed
-version is refused. Close the running server before updating.
-
-ROLLBACK APPLICATION.bat switches back to the previous MANAGED installed version.
-Initial install has no previous managed version. Old extracted releases and ZIPs
-are left in place, so you can also close the server and launch an earlier folder
-manually. A runtime/browser failure requires manual rollback; automatic recovery
-is limited to refusing invalid packages before activation. Export backups first.
-
-OPTIONAL LOCAL WINDOWS EXE BUILD
-Prerequisites: Windows 11, Python 3.12+ (3.12 x64 recommended), Internet access to
-pypi.org and files.pythonhosted.org, and a current browser. No Node is needed.
-1. In the extracted full portable release, double-click BUILD WINDOWS.bat.
-2. It creates an isolated temporary Python environment and installs
-   PyInstaller==6.16.0 with normal TLS validation. It bundles the existing web UI
-   and Python host into a console EXE, runs its --check asset-verification step,
-   and writes a timestamped Native-0.1.1-* folder inside this release's Build.
-3. That folder contains the native ZIP, checksum, EXE and native test manifest.
-   Earlier builds are not overwritten. Build success is NOT a completed Windows
-   interactive test: run the checklist above on the resulting EXE too.
-4. Double-click LicensePlateObfuscationStudio-0.1.1.exe inside its app folder.
-   End users of the resulting EXE do not need a Python installation.
-The cloud did NOT execute this Windows build script. PyInstaller does not
-cross-compile Windows binaries on Linux. There is no prebuilt Windows EXE in
-this portable download. The build is reproducible by procedure, not guaranteed
-to be byte-identical (PyInstaller's transitive dependencies are not hash-locked).
-
-AUTOMATED TESTS AND VERSION EVIDENCE
-See TEST_REPORT.md for actual current test results and unrun tests.
-release.json lists every packaged file, SHA-256 hashes and changed files.
-RELEASE_MANIFEST.json and true-engine.compatibility.json describe versions.
-Run VERIFY RELEASE.bat to check ALL packaged file hashes after extraction.
-Node 24 is needed only to run the source's Node domain tests, not to use the app.
-No future roadmap phase is included in this release.
+DETAILS
+See docs/WINDOWS-RELEASE-UPDATES.md, TEST_REPORT.md and KNOWN_ISSUES.md in source.
+Github API/download failures must leave the installed app untouched. Only the
+public Birthright repository and HTTPS GitHub asset hosts are used; no token is
+needed on the user's Windows computer. Stable updates do not install prereleases
+or silently downgrade. A SHA-256 checksum is integrity evidence, not a publisher
+signature or protection against a compromised release publisher.

@@ -32,8 +32,8 @@ def application_root():
 
 def verify_assets(root):
     manifest = json.loads((root / 'release.json').read_text(encoding='utf-8'))
-    if manifest.get('version') not in ('0.1.0', '0.1.1'):
-        raise ValueError('This launcher supports release 0.1.0 or 0.1.1')
+    if not re.fullmatch(r'\d+\.\d+\.\d+', manifest.get('version', '')):
+        raise ValueError('Unsupported application version')
     for name in ASSETS:
         expected = manifest['files'][name]
         if hashlib.sha256((root / name).read_bytes()).hexdigest() != expected:

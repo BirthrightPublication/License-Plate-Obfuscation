@@ -12,7 +12,7 @@ const path=require('node:path');
   let page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(String(e)));
   const url=process.env.STUDIO_URL||'http://localhost:4173';
   await page.goto(url);
-  assert.match(await page.locator('header').innerText(),/v0\.1\.1/);
+  assert.match(await page.locator('header').innerText(),new RegExp('v'+require('../package.json').version.replaceAll('.', '\\.')));
   assert.equal(await page.locator('#state option').count(),50);
   assert.equal(await page.textContent('#plateText'),'STUDIO');
   await page.selectOption('#state','Texas');await page.fill('#text','abc123');
