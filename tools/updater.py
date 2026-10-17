@@ -3,6 +3,7 @@ import hashlib
 import json
 import os
 from pathlib import Path, PurePosixPath
+import re
 import shutil
 import tempfile
 import zipfile
@@ -23,8 +24,10 @@ def install(archive, root):
                     raise ValueError('Unsafe archive path')
             manifest = json.loads(z.read('release.json'))
             version = manifest['version']
-            if not isinstance(version, str) or not version or any(c not in '0123456789.-' for c in version):
+            if not isinstance(version, str) or not re.fullmatch(r'\d+\.\d+\.\d+', version):
                 raise ValueError('Invalid version')
+            if manifest.get('kind', 'full') != 'full':
+                raise ValueError('Only full releases are supported; patches are refused')
             expected = manifest['files']
             if set(names) != set(expected) | {'release.json'}:
                 raise ValueError('Manifest does not cover archive')
@@ -35,6 +38,7 @@ def install(archive, root):
                 dest = stage / name
                 dest.parent.mkdir(parents=True, exist_ok=True)
                 dest.write_bytes(data)
+            (stage / 'release.json').write_bytes(z.read('release.json'))
         slot = root / 'versions' / version
         slot.parent.mkdir(exist_ok=True)
         if slot.exists():
@@ -54,10 +58,34 @@ def rollback(root):
     state = json.loads(pointer.read_text())
     if not state.get('previous'):
         raise ValueError('No previous release')
+    version = state['previous']
+    if not isinstance(version, str) or not re.fullmatch(r'\d+\.\d+\.\d+', version):
+        raise ValueError('Invalid rollback target')
+    target = root / 'versions' / version
+    if not target.is_dir():
+        raise ValueError('Previous release is missing; current release preserved')
     state['current'], state['previous'] = state['previous'], state['current']
     pending = root / 'next.json'
     pending.write_text(json.dumps(state))
     os.replace(pending, pointer)
+
+
+def find_release(build):
+    candidates = []
+    for archive in Path(build).glob('*.zip'):
+        try:
+            with zipfile.ZipFile(archive) as z:
+                manifest = json.loads(z.read('release.json'))
+            version = manifest.get('version', '')
+            if (manifest.get('application') == 'birthright.license-plate-studio'
+                    and manifest.get('kind') == 'full'
+                    and re.fullmatch(r'\d+\.\d+\.\d+', version)):
+                candidates.append((tuple(map(int, version.split('.'))), archive))
+        except (OSError, ValueError, KeyError, zipfile.BadZipFile):
+            continue
+    if not candidates:
+        raise ValueError('No compatible full release ZIP found in Build')
+    return max(candidates, key=lambda item: (item[0], item[1].name))[1]
 
 
 def main():
@@ -67,22 +95,21 @@ def main():
     parser.add_argument('--root', default=str(Path(__file__).resolve().parent.parent / 'Installed'))
     parser.add_argument('--rollback', action='store_true')
     parser.add_argument('--launch', action='store_true')
+    parser.add_argument('--build-dir', type=Path)
     args = parser.parse_args()
+    if args.build_dir:
+        args.archive = str(find_release(args.build_dir))
     if args.rollback:
         rollback(args.root)
     elif args.archive:
         print('Installed', install(args.archive, args.root))
     if args.launch:
-        import http.server
-        import functools
-        import webbrowser
+        import subprocess
+        import sys
         state = json.loads((Path(args.root) / 'current.json').read_text())
         folder = Path(args.root) / 'versions' / state['current']
-        handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(folder))
-        server = http.server.ThreadingHTTPServer(('127.0.0.1', 4173), handler)
-        webbrowser.open('http://localhost:4173')
-        print('Serving on port 4173; close this window to stop.')
-        server.serve_forever()
+        subprocess.run([sys.executable, str(Path(__file__).with_name('launch.py')),
+                        '--app-root', str(folder)], check=True)
 
 if __name__ == '__main__':
     main()

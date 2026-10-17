@@ -1,35 +1,13 @@
-# License Plate Obfuscation Studio · v0.1.0
+# License Plate Obfuscation Studio · v0.1.1
 
-Birthright membership product foundation. This release is an independent, local-first educational browser application. True Engine integration is blocked until a versioned SDK and its documented contract are supplied. No engine APIs or engine files have been modified. Membership authentication is not implemented.
+A runnable, local-first browser foundation with Windows launch scripts. This is a packaging maintenance release of the existing V0.1 UI, **not a compiled Windows executable or completed V0.1 roadmap milestone**. True Engine is not integrated; its versioned SDK has not been supplied.
 
-## Run and test
+Read **README - FIRST TIME SETUP.txt** for Windows extraction, Python setup, launch, manual testing, backup, update and rollback instructions. Keep ZIPs in `B:\License Plate Obfuscation Studio\Build`, extract each release to a new folder under `B:\License Plate Obfuscation Studio\Releases`, and double-click `START APPLICATION.bat`. A current browser and Python 3.12+ are required; no runtime npm packages are needed. `B:\True Engine` is not touched or required.
 
-Requires Python 3.12+; Node 24 for automated tests. No application dependencies or installation step.
+For development in this cloud: Python 3.12.14 and Node 24.19.0 are available. Run `python3 tools/release.py --prepare`, then `npm start`. Run `npm test` for domain, updater and launcher tests. With the server running, `CHROMIUM_PATH=/usr/bin/chromium node tools/smoke.cjs` runs browser automation using the cloud-provided Playwright 1.62.1. The default test origin is localhost:4173; `STUDIO_URL` can select a separate test instance. No user-facing cloud localhost preview is supported.
 
-```
-cd /workspace/License-Plate-Obfuscation
-npm start
-npm test
-```
+`npm run release` creates the portable full ZIP, file manifest, and ZIP checksum under Build and refuses to overwrite a release output. `BUILD WINDOWS.bat` must run on Windows to create an optional self-contained, unsigned browser-host EXE using PyInstaller 6.16.0. The native build procedure has not run here; Linux cannot cross-compile/test that Windows executable. No native EXE is provided in the portable ZIP.
 
-The server runs on port 4173. Use a consistent origin (`http://localhost:4173` on a local workstation) because browser storage is scoped to origin and browser profile. The cloud UI has no supported web preview. Browser automation: Playwright 1.62.1 is supplied by this cloud runtime; run `CHROMIUM_PATH=/usr/bin/chromium node tools/smoke.cjs` with the server running. For another machine, install that Playwright version outside the checkout and set NODE_PATH and CHROMIUM_PATH appropriately. Chromium downloads require cdn.playwright.dev; this environment's policy blocks that domain, so the installed system Chromium is used instead.
+Working UI: CSS plate preview with Orbit slider/reset, 50-state selector, preview-text editing, one browser-local saved project, JSON export/import, and research notes. Official research links cover California, Texas and New York. Legal status stays Unverified; risk is unassessed and availability explicitly unavailable. There is no engine viewport, drag-to-orbit, pan, zoom, official style artwork, jurisdiction-specific eligibility validation, membership access or vehicle-model support. See ROADMAP.md for the gap audit, TEST_REPORT.md for actual executed checks, and release.json for packaged hashes and changed files.
 
-## First use and supported scope
-
-Choose one of 50 US states, edit illustrative preview text, orbit the CSS 3D plate, then save on this device. There is one saved project slot; use JSON export/import for additional projects and backups. Research notes are stored separately in browser localStorage, not included in project exports. A denied storage permission produces an error message. Clearing browser data removes local projects and notes. No plate data is sent to a provider.
-
-California, Texas and New York have curated links to official catalogs and statutes. These are research leads, not a complete official style catalog or currently verified legal evidence. The neutral preview is not official plate artwork. Validation covers preview syntax only, not jurisdiction-specific registration eligibility. All legal assessments remain Unverified; risk is unassessed. Availability returns unavailable because there is no authorized provider integration. No scraping, fabricated responses, or legal certainty claims.
-
-Legal, Illegal, Obscure and Unverified are defined in the UI. Risk is independent: 1 Minimal, 2 Low, 3 Moderate, 4 High, 5 Critical; unknown is not a sixth level and is never scored as minimal. Verified records will require specific scope, current source text, review date and interpretation. Vehicle-model support is reserved in the compatibility manifest but unavailable.
-
-## Release and updater
-
-Run `npm run release`. Build contains the full ZIP, release.json (every packaged file and SHA-256), and SHA256SUMS.txt (ZIP checksum). Initial release has no prior base, so no patch is manufactured. Future patches require approval, an exact base version and validation.
-
-This Linux cloud cannot write a Windows B: drive. Copy the repository release bundle to `B:\License Plate Obfuscation Studio`; ZIPs belong in its `Build` subfolder. With Python 3.12+ installed on Windows, double-click `tools\Update.cmd` to verify, install and launch. Close any existing server before updating. Double-click `tools\Rollback.cmd` to activate the previous installed version and launch. Initial installation has no rollback target. Windows launchers have not been run in this Linux environment.
-
-Updater installs immutable version slots under Installed, verifies manifest hashes, rejects unsafe ZIP paths, and atomically replaces a current-version pointer. It refuses to overwrite existing versions. No user project/settings paths are removed. It preserves browser data by keeping the same localhost port/origin; use the same browser profile. Back up browser projects before updates. Rollback tests exercise two synthetic versions; there is only one product release today. Hashes detect corruption, not publisher identity: accept release archives only from a trusted distribution channel and compare the published ZIP checksum independently. Interrupted copies can leave an unused version directory but do not switch the active pointer.
-
-## Remaining prerequisites
-
-Supply the True Engine SDK package/repository, exact version and supported host/platform contract. Provide authorized availability-provider terms and credentials through secure environment settings, not chat. A complete official catalog, jurisdiction-specific rule datasets and reviewed legal evidence remain future approved work. Do not deploy this foundation as a completed engine-powered product.
+Browser localStorage is profile/origin-specific. Use the same `http://localhost:4173` profile across releases, export before overwriting the single save slot, and separately back up research notes. No release deletes source, browser data or personal files. Managed version slots retain earlier code versions; failed package validation prevents activation. Runtime failures require manual rollback. Only full updates are supported; patches are refused.

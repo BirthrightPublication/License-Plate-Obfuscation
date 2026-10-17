@@ -1,10 +1,10 @@
 {
   "name": "license-plate-obfuscation-studio",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "python3 -m http.server 4173 --bind 0.0.0.0",
+    "start": "python3 tools/launch.py",
     "test": "node --test tests/*.test.js && python3 -m unittest discover -s tests -p \"test_*.py\"",
     "release": "python3 tools/release.py"
   }
