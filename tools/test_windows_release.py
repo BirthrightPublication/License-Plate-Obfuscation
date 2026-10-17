@@ -33,8 +33,9 @@ def main():
         base=Path(tmp);stage=base/'extract'
         extract_package(archive,stage,version)
         for exe in ['PlateStudio.exe','PlateUpdater.exe']:
-            subprocess.run([str(stage/'app'/exe),'--check'],check=True)
-        subprocess.run(['cmd','/d','/c',str(stage/'Start Plate.bat'),'--check'],check=True,cwd=stage)
+            subprocess.run([str(stage/'app'/exe),'--check'],check=True,timeout=60)
+        subprocess.run('call "' + str(stage/'Start Plate.bat') + '" --check',
+                       shell=True,check=True,cwd=stage,timeout=60)
         result['checks'].append('ZIP/checksum complete; both native EXEs and Start Plate.bat execute')
         root=base/'License Plate Studio';root.mkdir()
         personal={}
@@ -79,4 +80,10 @@ def main():
 
 
 if __name__=='__main__':
-    main()
+    try:
+        main()
+    except Exception:
+        import traceback
+        message=traceback.format_exc().replace('%','%25').replace('\r','%0D').replace('\n','%0A')
+        print('::error::'+message,flush=True)
+        raise

@@ -12,6 +12,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   tests:
+    timeout-minutes: 10
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
@@ -32,6 +33,7 @@ jobs:
   windows-package:
     needs: tests
     runs-on: windows-latest
+    timeout-minutes: 20
     steps:
       - run: git config --global core.autocrlf false
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
@@ -78,6 +80,7 @@ jobs:
     needs: windows-package
     if: startsWith(github.ref, 'refs/tags/v')
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     permissions:
       contents: write
     steps:
