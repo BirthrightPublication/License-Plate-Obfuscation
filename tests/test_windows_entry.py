@@ -20,7 +20,8 @@ class WindowsEntryTests(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory(prefix='Plate Entry Test ')
         self.addCleanup(self.tmp.cleanup)
-        self.root = Path(self.tmp.name) / 'Source and Installation'
+        # Windows may return an 8.3 TEMP alias; dispatch intentionally canonicalizes it.
+        self.root = (Path(self.tmp.name) / 'Source and Installation').resolve()
         self.root.mkdir()
         self.commands = []
 

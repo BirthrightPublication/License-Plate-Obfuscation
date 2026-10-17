@@ -18,9 +18,23 @@ jobs:
         run: rustup toolchain install 1.85.1 --profile minimal
       - name: Run external CPU and actual engine GPU pixel tests
         working-directory: integration/true-engine-sdk-probe
+        shell: bash
         env:
           EGL_PLATFORM: surfaceless
           CARGO_BUILD_JOBS: '4'
-        run: cargo +1.85.1 test --locked -- --nocapture
+        run: |
+          set -euo pipefail
+          cargo +1.85.1 test --locked -- --nocapture 2>&1 | tee sdk-test-results.txt
+      - name: Expose actual failure evidence without requiring authenticated logs
+        if: failure()
+        working-directory: integration/true-engine-sdk-probe
+        shell: python
+        run: |
+          from pathlib import Path
+          report = Path('sdk-test-results.txt')
+          if report.exists():
+              output = '\n'.join(report.read_text(errors='replace').splitlines()[-100:])
+              output = output.replace('%', '%25').replace('\r', '%0D').replace('\n', '%0A')
+              print('::error title=SDK consumer failure details::' + output, flush=True)
       # GPU adapter absence is a failed qualification, never an automatic skip.
       # This job does not publish an application, SDK, or binary release.
