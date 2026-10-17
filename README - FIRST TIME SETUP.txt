@@ -1,5 +1,5 @@
 LICENSE PLATE STUDIO - WINDOWS X64 RELEASE / UPDATE SYSTEM
-Version 0.1.2 release candidate. Consult the GitHub Release's Windows test report
+Version 0.1.2 Windows release/update package. Consult the GitHub Release's Windows test report
 for actual build/test status. Source alone is NOT an installation ZIP.
 
 SUPPORTED INSTALLATION

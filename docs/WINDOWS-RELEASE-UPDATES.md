@@ -16,7 +16,7 @@ and uploads the following exact names to a draft GitHub Release:
 - `windows-test-report.txt`
 
 It re-downloads draft assets and verifies the checksum before publishing the
-stable release. Failed tests do not publish a stable release. Source-code archives
+stable release. A final Windows job exercises the real public updater API/download, native install, data preservation and already-current path; it attaches its report permanently. If this post-publication acceptance fails, the release is returned to draft for diagnosis without deleting assets/history. Failed pre-publication tests do not publish a stable release. Source-code archives
 are never substituted for installers. Existing releases/assets are not clobbered;
 a pre-existing release makes creation fail for manual diagnosis. Workflow artifacts
 from development branches are test candidates, not stable releases. A successful
