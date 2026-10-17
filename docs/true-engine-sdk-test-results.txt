@@ -1,0 +1,29 @@
+True Engine SDK0.1 / crate0.1.2 consumer compatibility
+Dependency source: 8d751dbe76ca1dfd02c826e60ec68dda7e7d51b0
+Scope: separate Rust acceptance probe, NOT Plate Studio production integration
+Host: Linux, Rust1.85.1; Mesa llvmpipe software adapter
+Command: cargo +1.85.1 test --locked -- --nocapture
+EGL_PLATFORM=surfaceless; writable XDG_RUNTIME_DIR/MESA_SHADER_CACHE_DIR
+Result: exit0, 4CPU +1GPU passed, 0 failed/ignored.
+Windows native/input/hardware: NOT RUN in this cloud.
+
+   Compiling plate-studio-true-engine-sdk-probe v0.0.0 (/workspace/License-Plate-Obfuscation/integration/true-engine-sdk-probe)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.15s
+     Running tests/sdk_cpu.rs (/workspace/.tools/plate-sdk-target/debug/deps/sdk_cpu-159df9723fe37230)
+
+running 4 tests
+test application_edits_use_validated_engine_nodes ... ok
+test camera_ray_selects_the_plate_and_misses_empty_space ... ok
+test sdk_input_and_resized_aspect_change_camera_outputs ... ok
+test project_reopens_plate_dimensions_rotation_and_material ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/sdk_gpu.rs (/workspace/.tools/plate-sdk-target/debug/deps/sdk_gpu-6668bdcec6c457d9)
+
+running 1 test
+True Engine probe adapter: AdapterInfo { name: "llvmpipe (LLVM 19.1.7, 256 bits)", vendor: 65541, device: 0, device_type: Cpu, driver: "", driver_info: "", backend: Gl }
+test engine_renders_edited_plate_camera_and_resized_target ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+

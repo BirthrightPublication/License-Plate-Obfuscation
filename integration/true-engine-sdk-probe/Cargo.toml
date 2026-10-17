@@ -1,0 +1,11 @@
+[package]
+name = "plate-studio-true-engine-sdk-probe"
+version = "0.0.0"
+edition = "2021"
+rust-version = "1.85"
+publish = false
+
+[dependencies]
+true-engine = { git = "https://github.com/BirthrightPublication/True-Engine.git", rev = "8d751dbe76ca1dfd02c826e60ec68dda7e7d51b0", version = "=0.1.2" }
+wgpu = "0.19"
+pollster = "0.3"

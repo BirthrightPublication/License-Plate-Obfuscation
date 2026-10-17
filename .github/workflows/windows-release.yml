@@ -11,6 +11,8 @@ concurrency:
   group: windows-${{ github.ref }}
   cancel-in-progress: ${{ github.ref_type == 'branch' }}
 jobs:
+  sdk-compatibility:
+    uses: ./.github/workflows/true-engine-sdk.yml
   tests:
     timeout-minutes: 10
     strategy:
@@ -31,7 +33,7 @@ jobs:
       - run: node --test tests/domain.test.js
       - run: python tools/run_tests_ci.py
   windows-package:
-    needs: tests
+    needs: [tests, sdk-compatibility]
     runs-on: windows-latest
     timeout-minutes: 20
     steps:
@@ -52,6 +54,17 @@ jobs:
           assert re.fullmatch(r'(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)', version)
           if os.environ['GITHUB_REF'].startswith('refs/tags/'):
               assert os.environ['GITHUB_REF_NAME'] == 'v' + version
+      - name: Refuse a new stable release while engine integration is incomplete
+        if: startsWith(github.ref, 'refs/tags/v')
+        shell: python
+        run: |
+          import json
+          compatibility = json.load(open('true-engine.compatibility.json'))
+          assert compatibility.get('applicationRendersThroughTrueEngine') is True, 'Application still does not render through True Engine'
+          assert compatibility.get('integrationStatus') == 'integrated-and-tested', 'Complete application integration acceptance is required'
+          assert not compatibility.get('blockingCapabilities'), 'Required SDK capabilities remain missing'
+          assert compatibility.get('sdkVersion') in compatibility.get('testedVersions', []), 'Selected SDK has not passed compatibility tests'
+          # A standalone consumer probe cannot satisfy application acceptance.
       - run: python -m pip install -r tools/requirements-windows-build.txt
       - name: Build self-contained runtime and updater
         run: python tools/windows_release.py --output Build

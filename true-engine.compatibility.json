@@ -1,10 +1,27 @@
 {
   "schemaVersion": 1,
   "applicationVersion": "0.1.2",
-  "integrationStatus": "blocked-sdk-not-supplied",
-  "sdkPackage": null,
-  "sdkVersion": null,
-  "testedVersions": [],
+  "integrationStatus": "blocked-required-sdk-apis",
+  "sdkPackage": "true-engine",
+  "sdkVersion": "0.1.2",
+  "testedVersions": [
+    "0.1.2"
+  ],
   "policy": "Only documented versioned SDK interfaces; no private APIs or engine repository modifications.",
-  "vehicleModelSupport": "reserved; unavailable in 0.1.0"
+  "vehicleModelSupport": "reserved; unavailable in 0.1.0",
+  "sdkContractVersion": "0.1",
+  "sdkRepository": "https://github.com/BirthrightPublication/True-Engine",
+  "sdkSourceCommit": "8d751dbe76ca1dfd02c826e60ec68dda7e7d51b0",
+  "sdkTag": "v0.1.2",
+  "sceneSchemaVersion": 1,
+  "applicationRendersThroughTrueEngine": false,
+  "compatibilityProbe": "integration/true-engine-sdk-probe",
+  "blockingCapabilities": [
+    "supported plate text or custom-mesh submission",
+    "engine-owned orthographic projection with consistent picking"
+  ],
+  "assessment": "docs/TRUE-ENGINE-SDK-ASSESSMENT.md",
+  "featureRequest": "docs/TRUE-ENGINE-FEATURE-REQUEST.md",
+  "testScope": "Standalone external SDK consumer only; 4 CPU and 1 offscreen rendered-pixel test on Linux Mesa llvmpipe/GL. Production application and Windows integration untested.",
+  "testReport": "docs/true-engine-sdk-test-results.txt"
 }
