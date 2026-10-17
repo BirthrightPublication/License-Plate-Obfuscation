@@ -1,3 +1,16 @@
+DEVELOPMENT HOLD / EXPERIMENTAL PROTOTYPE NOTICE
+The v0.1.2 interface is not approved as the final design. Feature/visual work and
+feature-version advancement are paused pending explicit restart approval and a
+tested True Engine SDK. The historical instructions below are not authorization
+to repair, install over, migrate or replace an existing installation.
+
+The current source folder and the native app folder are different layouts.
+START APPLICATION.bat runs Python source; Start Plate.bat requires app\PlateStudio.exe.
+Update Plate.bat cannot bootstrap if both native updater and recovery copy are
+missing. BUILD WINDOWS.bat makes an archive; it does not install that app folder.
+See docs/INSTALLATION-AUDIT.md and docs/INSTALLATION-REPAIR-PLAN.md in current source.
+No scripts have been retired. Obtain approval for exact repair paths/changes first.
+
 LICENSE PLATE STUDIO - WINDOWS X64 RELEASE / UPDATE SYSTEM
 Version 0.1.2 Windows release/update package. Consult the GitHub Release's Windows test report
 for actual build/test status. Source alone is NOT an installation ZIP.

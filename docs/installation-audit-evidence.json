@@ -1,0 +1,65 @@
+{
+  "auditDate": "2026-10-16",
+  "timezone": "America/Los_Angeles",
+  "baselineCommit": "6628330557541f1e59fabe4f41db780b4d455398",
+  "prototypeVersion": "0.1.2",
+  "screenshot": {
+    "fullWindowsPathVisible": false,
+    "buildContentsVisible": false,
+    "visibleFolders": [
+      ".github",
+      "Build",
+      "docs",
+      "src",
+      "tests",
+      "tools"
+    ],
+    "appFolderVisible": false,
+    "interpretation": "source layout; native launcher guard paths not supplied in shown layout"
+  },
+  "cloudPathPresence": {
+    "app": false,
+    "app/PlateStudio.exe": false,
+    "app/PlateUpdater.exe": false,
+    ".plate-studio/recovery-updater.exe": false,
+    "Installed/current.json": false,
+    "true_engine.compatibility.json": false,
+    "true-engine.compatibility.json": true
+  },
+  "verifiedArchive": {
+    "filename": "License-Plate-Studio-v0.1.2-windows-x64.zip",
+    "sha256": "3fa3cbf5c4f9e3569ab424f00a128a2ac4deb6b24234de98cf6ba5d50faa9938",
+    "sourceCommit": "a04ce38494241d69b268b1f12cb04eae724a15ec",
+    "entries": [
+      "app/CHANGELOG.md",
+      "app/KNOWN_ISSUES.md",
+      "app/manifest.json",
+      "app/PlateStudio.exe",
+      "app/PlateUpdater.exe",
+      "app/true-engine.compatibility.json",
+      "README - FIRST TIME SETUP.txt",
+      "Rollback Plate.bat",
+      "Start Plate.bat",
+      "Update Plate.bat"
+    ],
+    "managedFileHashesVerified": 5,
+    "peMachineHex": "0x8664 for both EXEs"
+  },
+  "operationsExecuted": [
+    "read-only repository/script/manifest/archive inspection",
+    "read-only PyPI metadata request",
+    "documentation edits"
+  ],
+  "operationsNotExecuted": [
+    "build",
+    "dependency installation",
+    "Windows program execution",
+    "installation extraction",
+    "update",
+    "repair",
+    "rollback",
+    "migration",
+    "new UI or engine implementation"
+  ],
+  "versionAdvanced": false
+}

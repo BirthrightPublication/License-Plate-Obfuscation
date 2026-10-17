@@ -1,25 +1,49 @@
-# Master roadmap and current status
+# Development hold — experimental V0.1.2
 
-The full user-supplied roadmap is preserved in docs/MASTER-DEVELOPMENT-ROADMAP.md.
-Current release: 0.1.1, a packaging correction for the existing 0.1.0 foundation.
-**V0.1 FIRST WORKING STUDIO is incomplete. V0.2 has not begun.**
+**New features, visual implementation and feature-version advancement are paused.**
+The present build is an experimental browser prototype. The current interface is
+not approved as the final design. True Engine is the permanent 3D foundation; no
+competing engine or CSS-as-engine substitution is authorized.
 
-| V0.1 requirement | Actual state |
+The original user roadmap remains preserved in docs/MASTER-DEVELOPMENT-ROADMAP.md.
+This hold takes precedence over its next milestones and the general Continue
+workflow. No next feature version is scheduled or implicitly authorized.
+
+## Actual state
+
+| Area | Evidence-backed status |
 | --- | --- |
-| Functional 3D viewport / generic model | Partial: illustrative CSS 3D plate, no engine mesh/viewport |
-| Custom text / real-time rendering | Working browser text/state updates |
-| Orbit, pan, zoom | Partial: Orbit slider and reset only; no direct mouse camera, pan or zoom |
-| Simple dark interface | Missing: current UI is light cream/green |
-| New/save/open project | Partial: one browser save slot, JSON export/import; no New command or multi-project browser |
-| Windows launcher | Supplied in 0.1.1; Windows execution pending user test |
-| Working test build | Portable browser distribution tested in Linux Chromium; Windows manual test pending |
-| Versioned True Engine SDK | Blocked: SDK package/version/contract not supplied |
+| Release identity | v0.1.2 source/tag/package preserved; packaging history is not UI approval |
+| True Engine | No selected SDK package/version/commit, adapter or compatibility test |
+| Viewport | HTML/CSS perspective prototype, not a True Engine GPU viewport |
+| Input/editing | Text/state preview and an Orbit slider; no real 3D mouse navigation, pan/zoom or object-editing system |
+| Interface | Landing-page intro with light panels; user rejected final-design direction |
+| Projects | One browser save slot and JSON import/export; separate notes; no native scene schema |
+| Installation | Source/Python, legacy Installed and native app launcher contracts coexist and are confusing; screenshot has source layout with no visible app folder |
+| Windows package | Published ZIP includes x64 app/runtime/updater; verified hash/manifest/PE now; not automatically installed by a source checkout or BUILD WINDOWS |
+| Maintenance | Full-package native updater/backups exist; no dedicated repair utility or patch application implementation |
+| Legal/research | Prototype source links only; legal status Unverified, risk unassessed, availability unavailable |
 
-0.1.1 is deliberately limited to distribution, setup, validation and documentation.
-Existing early state/legal UI is not evidence that V0.2–V0.5 milestones are complete.
+## This iteration — documentation/audit only
 
-Future sequence, requiring the authorized iteration workflow: finish V0.1, then
-V0.2 plate design; V0.3 geometry; V0.4 legal intelligence; V0.5 authorized plate
-checker; V0.6 educational visibility simulation; V0.7 academy; V0.8 vehicle assets;
-V0.9 membership/signed distribution; V1.0 production validation. No identification-
-evasion optimizer, restricted DMV access, or guaranteed legal classification.
+- Trace scripts and verify source/release layout: docs/INSTALLATION-AUDIT.md.
+- Propose one launcher, one updater, one repair utility and a safe plan:
+  docs/INSTALLATION-REPAIR-PLAN.md.
+- Record SDK gates and professional editor architecture:
+  docs/TRUE-ENGINE-UI-ARCHITECTURE.md.
+- Keep all scripts, source, binaries, releases, projects/settings and versions intact.
+- No build, installation, repair, migration, new UI, SDK integration, patch or tag.
+
+## Gates for later authorized work
+
+1. Confirm exact Windows installation paths; approve a concrete preservation and
+   repair/replacement plan before any installation mutation. Repair approval does
+   not approve an interface redesign or feature-version advancement.
+2. Await explicit approval to restart True Engine work in its own repository and
+   delivery of a tested, documented versioned SDK; do not invent its capabilities.
+3. Prove engine operation through supported interfaces in an explicitly authorized
+   integration task. Preserve current projects and record exact compatibility.
+4. Obtain explicit approval to resume Plate Studio and implement the professional
+   editor architecture after engine operation is established.
+5. Reassess V0.1 acceptance before discussing V0.2. Never automatically advance
+   later design/legal/simulation/vehicle/membership milestones from this audit.

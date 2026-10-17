@@ -1,5 +1,9 @@
 # License Plate Obfuscation Studio
 
+> **Development hold:** v0.1.2 is an experimental prototype. The current interface is not approved; no feature/visual implementation or feature-version advancement is authorized. True Engine must be operational through a tested versioned SDK before any approved redesign. Read the [installation audit](docs/INSTALLATION-AUDIT.md), [safe repair/structure plan](docs/INSTALLATION-REPAIR-PLAN.md) and [SDK/UI architecture](docs/TRUE-ENGINE-UI-ARCHITECTURE.md). Existing build/install instructions below describe historical tooling; this audit does not authorize running them or replacing an installation.
+
+The screenshot shows a source layout: START APPLICATION.bat uses Python source, while Start Plate.bat requires app/PlateStudio.exe and Update Plate.bat requires its native updater/recovery EXE. No app folder is shown. BUILD WINDOWS.bat creates a ZIP, not an installed app folder. Preserve all scripts and data; approve a concrete repair plan before installation changes.
+
 Authoritative source: [BirthrightPublication/License-Plate-Obfuscation](https://github.com/BirthrightPublication/License-Plate-Obfuscation), stable branch main. True Engine is a separate repository; no SDK is integrated. No open-source license has been selected.
 
 The 0.1.2 release/update iteration adds a GitHub-based Windows distribution system to the existing V0.1 educational browser foundation. It does not add editor features or complete the V0.1 roadmap. A source checkout is not an installer. Actual Windows build/publication status must be read from Actions and the release's Windows test report.

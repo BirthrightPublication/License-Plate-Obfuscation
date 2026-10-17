@@ -20,5 +20,18 @@
   "taggedSourceCommit": "a04ce38494241d69b268b1f12cb04eae724a15ec",
   "releaseUrl": "https://github.com/BirthrightPublication/License-Plate-Obfuscation/releases/tag/v0.1.2",
   "packageSha256": "3fa3cbf5c4f9e3569ab424f00a128a2ac4deb6b24234de98cf6ba5d50faa9938",
-  "releaseAcceptanceRun": "https://github.com/BirthrightPublication/License-Plate-Obfuscation/actions/runs/38992985878"
+  "releaseAcceptanceRun": "https://github.com/BirthrightPublication/License-Plate-Obfuscation/actions/runs/38992985878",
+  "productMaturity": "experimental-prototype",
+  "developmentHold": true,
+  "interfaceApproved": false,
+  "featureVersionAdvancementAllowed": false,
+  "visualImplementationAllowed": false,
+  "repairRequiresExplicitConfirmation": true,
+  "restartPrerequisites": [
+    "Explicit approval to restart relevant True Engine work",
+    "Tested versioned True Engine SDK and operational proof",
+    "Explicit approval to resume Plate Studio implementation"
+  ],
+  "installationAudit": "docs/INSTALLATION-AUDIT.md",
+  "proposedRepairPlan": "docs/INSTALLATION-REPAIR-PLAN.md"
 }

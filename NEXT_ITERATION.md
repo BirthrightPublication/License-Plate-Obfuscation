@@ -1,7 +1,9 @@
-# Next objective after v0.1.2
+# ACTIVE DEVELOPMENT HOLD — no next feature version
 
-v0.1.2 is published at https://github.com/BirthrightPublication/License-Plate-Obfuscation/releases/tag/v0.1.2. Tagged source a04ce38494241d69b268b1f12cb04eae724a15ec. Exact ZIP hash and permanent test reports are in docs/releases/history.json. Run 38992985878 passed Windows/Linux tests, native build/install/recovery/browser checks, publication and a real public GitHub update on Windows. Do not retag or overwrite this release.
+V0.1.2 is an experimental prototype; the current interface is not approved. The latest user instruction overrides the general Continue workflow and the old master roadmap. No new features, visual implementation, feature-version advancement, patch/tag/release, installer or repair operation is authorized by this audit. Do not automatically proceed to V0.1.3 or V0.2.
 
-Await the user's Windows 11 installation/update feedback under B:\License Plate Studio. Fix reported launch/update/data issues before new editor features. Preserve all personal projects/media/configurations, older packages and source. Only verified managed app code is replaceable.
+Read docs/INSTALLATION-AUDIT.md for exact launcher/ZIP/screenshot evidence. The source root lacks native app EXEs; the shown Windows folder is a source layout. Full B: path/Build contents remain unknown. Read docs/INSTALLATION-REPAIR-PLAN.md for a proposed unified launcher/update/repair structure and confirmation-gated preservation plan. Do not run build/update/rollback/dependency scripts to diagnose this mismatch or delete old scripts.
 
-No further feature iteration is authorized. True Engine SDK/version remains missing. V0.1 camera/theme/project gaps remain; do not begin V0.2 or modify the engine. On a later authorized update fetch/inspect main, use a feature branch, test, push, obtain review where supported, merge approved work, tag exact source and verify both release assets and live update acceptance.
+Await the user's explicit approval of a concrete safe repair if desired; this does not lift the UI/feature hold. Independently await approval to restart relevant True Engine work in its own repository and delivery of a tested versioned SDK. Never modify that engine here or build a substitute renderer. After engine operation is proven, obtain explicit approval to resume Plate Studio and review docs/TRUE-ENGINE-UI-ARCHITECTURE.md before implementation.
+
+Preserve published v0.1.2 source/tag/package and prior history. Historical run 38992985878 proves prototype packaging/update tests, not approval of the interface or engine integration. Current audit changes documentation only, with no new build/version.

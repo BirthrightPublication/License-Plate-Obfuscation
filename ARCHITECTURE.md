@@ -1,15 +1,49 @@
-# Architecture
+# Architecture — experimental prototype on development hold
 
-Independent browser application; index.html and src/* use standard ES modules and CSS transforms. No external application libraries, backend database, account service, analytics or True Engine private interfaces. The neutral plate is an HTML element, not an engine model.
+The V0.1.2 interface is not approved as the final product. This document separates
+what exists from proposals. No competing renderer or visual implementation is
+authorized before a tested True Engine SDK and explicit restart approval.
 
-Local project schemaVersion 1: name, state, text. One browser localStorage slot (`birthright.plate.project.v1`); notes use `birthright.plate.notes.v1`. JSON exports contain only project fields. Updates do not migrate these schemas. Browser origin/profile must remain stable.
+## Existing code
 
-Python tools/launch.py verifies packaged asset hashes, binds only 127.0.0.1:4173, serves an explicit four-file allowlist with ES module MIME types, and opens localhost in the default browser. Personal files, sources and settings are not exposed through the host. The Python process must stay running. All app functionality runs in the browser; Python is only a local file host.
+index.html and src/* are a browser prototype using standard ES modules and CSS
+perspective transforms. The plate is an HTML element. There is no engine scene,
+mesh renderer, camera/picking system or True Engine SDK adapter. The large intro
+is present in the HTML and is not the future professional editing shell.
 
-Full-release ZIPs include complete runnable assets, source/tests/docs and Python tools; no native binary is implied. A separate Windows-only script can freeze the host and its assets using PyInstaller. The resulting EXE still uses an external browser. No cross-compilation or engine integration occurs.
+Project schemaVersion 1 stores name/state/text in browser localStorage key
+birthright.plate.project.v1. Notes use birthright.plate.notes.v1 and are not included
+in JSON exports. Preserve original exports, notes, same profile and localhost:4173.
+No migration or project schema change is part of this audit.
 
-Managed updater stages and verifies full releases, retains version slots and atomically switches a current/previous pointer under Installed. It refuses existing slots and patch packages. Hashes detect corruption, not malicious publisher changes; signed distribution remains a later milestone. Failed pre-activation checks leave the active pointer intact. Runtime failure recovery is manual rollback.
+The source host tools/launch.py serves four allowlisted UI assets after root
+release.json validation, or a legacy Installed/current.json selection. START
+APPLICATION.bat invokes that Python route. This can work without a native app.
 
-## 0.1.2 Windows distribution decision
+The distinct native distribution freezes the same host/UI in app/PlateStudio.exe,
+plus app/PlateUpdater.exe. Native Start/Update batch files require that layout
+beside themselves. A source checkout has no app directory; native files in a Build
+ZIP are not automatically installed. The screenshot matches the source layout.
 
-The current update system uses two PyInstaller onefile EXEs (studio host and separate updater), a versioned managed app manifest, external updater runners and journaled app-directory swaps. This avoids requiring end-user Python while keeping the existing browser UI, data schema and origin. Only app is replaceable; every root data/config/media path is preserved. tools/updater.py remains as a legacy-only full-package updater for historical workflows; new installations use tools/github_updater.py and the standardized ZIP. See docs/WINDOWS-RELEASE-UPDATES.md for protocol, failure recovery and test/publication boundaries.
+Legacy tools/updater.py manages Installed slots from root release.json full ZIPs;
+newer tools/github_updater.py manages app with app/manifest.json, backups/journal
+and an external updater copy under .plate-studio. Both are full-package systems;
+neither implements the proposed patch or repair contract. Do not combine them as
+one interchangeable installation or erase their histories.
+
+## Proposed architecture (not implemented)
+
+- [Installation audit](docs/INSTALLATION-AUDIT.md): exact paths, failures, build
+  side effects and source-versus-native evidence.
+- [Installation/repair plan](docs/INSTALLATION-REPAIR-PLAN.md): one Start, one Update,
+  one Repair entry point; independent maintenance bootstrap; developer files under
+  Build/Source; versioned full/patch contracts and protected data boundaries.
+- [True Engine/UI architecture](docs/TRUE-ENGINE-UI-ARCHITECTURE.md): engine-owned
+  GPU scene/viewport/input, a thin documented-SDK adapter, domain commands/project
+  storage, compact professional shell and separate source-linked legal metadata.
+
+The SDK must define the actual host/render/input contract. Do not invent APIs or
+implement a local engine fallback. A working engine proof must precede any editor
+redesign; explicit user restart approval is also required. No app version, source
+implementation, launcher, existing installation or project was changed by this
+architecture documentation update.
