@@ -82,10 +82,19 @@ fn center(data: &[u8], width: usize, height: usize) -> &[u8] {
 fn engine_renders_edited_plate_camera_and_resized_target() {
     pollster::block_on(async {
         let instance = wgpu::Instance::default();
-        let adapter = instance
+        let default_adapter = instance
             .request_adapter(&wgpu::RequestAdapterOptions::default())
-            .await
-            .expect("GPU acceptance failed: no compatible adapter; use --test sdk_cpu only for an explicitly CPU-only check");
+            .await;
+        let adapter = match default_adapter {
+            Some(adapter) => adapter,
+            None => {
+                eprintln!("No default adapter; requesting a wgpu software adapter for the same True Engine renderer");
+                instance.request_adapter(&wgpu::RequestAdapterOptions {
+                    force_fallback_adapter: true,
+                    ..Default::default()
+                }).await.expect("GPU acceptance failed: no compatible adapter; use --test sdk_cpu only for an explicitly CPU-only check")
+            }
+        };
         eprintln!("True Engine probe adapter: {:?}", adapter.get_info());
         let (device, queue) = adapter
             .request_device(

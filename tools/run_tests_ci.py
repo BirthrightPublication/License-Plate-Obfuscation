@@ -11,4 +11,7 @@ for test, trace in result.errors + result.failures:
     print('::error::' + message, flush=True)
 if result.testsRun == 0:
     print('::error::No tests executed', flush=True)
+print('::notice title=Python test results::platform=' + sys.platform
+      + ', discovered=' + str(result.testsRun) + ', failures=' + str(len(result.failures))
+      + ', errors=' + str(len(result.errors)) + ', skipped=' + str(len(result.skipped)), flush=True)
 raise SystemExit(0 if result.wasSuccessful() and result.testsRun else 1)
